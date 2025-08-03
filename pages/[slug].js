@@ -82,7 +82,8 @@ function MarkdownWithGallery({ content }) {
   let currentImages = [];
   let currentText = [];
 
-  const imageRegex = /^!\[.*\]\((.*)\)$/;
+  // Regex to match markdown images: ![alt](src)
+  const imageRegex = /^!\[(.*)\]\((.*)\)$/;
 
   function flushText() {
     if (currentText.length > 0) {
@@ -95,7 +96,7 @@ function MarkdownWithGallery({ content }) {
     const match = line.match(imageRegex);
     if (match) {
       flushText();
-      currentImages.push(match[1]);
+      currentImages.push({ src: match[2], alt: match[1] });
     } else {
       if (currentImages.length > 0) {
         groups.push({ type: 'gallery', images: currentImages });
