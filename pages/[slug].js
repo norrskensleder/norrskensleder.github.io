@@ -4,7 +4,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getPostData, getSortedPostsData } from '../lib/posts';
 import Head from 'next/head';
-import { marked } from 'marked';
+import React, { useMemo } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import Gallery from '../components/Gallery';
 
 export default function Post({ post }) {
   return (
@@ -27,11 +30,7 @@ export default function Post({ post }) {
           </Box>
         )}
         <Box sx={{ mt: 2 }}>
-          <div
-            style={{ width: '100%' }}
-            className="markdown-content"
-            dangerouslySetInnerHTML={{ __html: marked(post.content) }}
-          />
+          <MarkdownWithGallery content={post.content} />
         </Box>
       </Container>
       <Footer />
@@ -50,9 +49,87 @@ export async function getStaticProps({ params }) {
   return { props: { post } };
 }
 
-// Add global style for markdown images
-if (typeof window !== 'undefined') {
-  const style = document.createElement('style');
-  style.innerHTML = `.markdown-content img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 16px #00336622; margin: 16px 0; }`;
-  document.head.appendChild(style);
+// Helper to extract consecutive images from markdown AST
+function groupImages(children) {
+  const groups = [];
+  let current = [];
+  children.forEach((child, idx) => {
+    if (child.type === 'element' && child.tagName === 'img') {
+      current.push(child);
+    } else {
+      if (current.length > 1) {
+        groups.push({ type: 'gallery', images: current.map(img => img.properties.src) });
+        current = [];
+      } else if (current.length === 1) {
+        groups.push(current[0]);
+        current = [];
+      }
+      groups.push(child);
+    }
+  });
+  if (current.length > 1) {
+    groups.push({ type: 'gallery', images: current.map(img => img.properties.src) });
+  } else if (current.length === 1) {
+    groups.push(current[0]);
+  }
+  return groups;
+}
+
+function MarkdownWithGallery({ content }) {
+  // Split content into lines and group consecutive image lines
+  const lines = content.split('\n');
+  const groups = [];
+  let currentImages = [];
+  let currentText = [];
+
+  const imageRegex = /^!\[.*\]\((.*)\)$/;
+
+  function flushText() {
+    if (currentText.length > 0) {
+      groups.push({ type: 'text', text: currentText.join('\n') });
+      currentText = [];
+    }
+  }
+
+  lines.forEach(line => {
+    const match = line.match(imageRegex);
+    if (match) {
+      flushText();
+      currentImages.push(match[1]);
+    } else {
+      if (currentImages.length > 0) {
+        groups.push({ type: 'gallery', images: currentImages });
+        currentImages = [];
+      }
+      currentText.push(line);
+    }
+  });
+  if (currentImages.length > 0) {
+    groups.push({ type: 'gallery', images: currentImages });
+  }
+  flushText();
+
+  return (
+    <>
+      {groups.map((group, idx) => {
+        if (group.type === 'gallery') {
+          return <Gallery key={idx} images={group.images} />;
+        } else {
+          return (
+            <ReactMarkdown
+              key={idx}
+              remarkPlugins={[remarkGfm]}
+              components={{
+                img({ node, ...props }) {
+                  return <img style={{ maxWidth: '100%', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0' }} {...props} />;
+                },
+              }}
+            >
+              {group.text}
+            </ReactMarkdown>
+          );
+        }
+      })}
+    </>
+  );
 }
