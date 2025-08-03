@@ -7,10 +7,10 @@ coverImage: "/images/trolls.jpg"
 
 Trolls are everywhere in Norway, from miniatures and sculptures in shops to street names and countless place names. Recently I have had a road trip on different parts of Norway and I got curious about these intriguing creatures. I delved into the world of trolls.
 
-![Troll Statue](/images/trolls_1.jpg)
-![Troll Statue](/images/trolls_2.jpg)
-![Troll Statue](/images/trolls_3.jpg)
-![Troll Statue](/images/trolls_4.jpg)
+![Troll Statue](/images/trolls_1.JPG)
+![Troll Statue](/images/trolls_2.JPG)
+![Troll Statue](/images/trolls_3.JPG)
+![Troll Statue](/images/trolls_4.JPG)
 
 Trolls are a fundamental part of Norwegian culture, deeply embedded in art, literature, and media. These mythical beings are often depicted in traditional Norwegian fairy tales and folklore, where they range from menacing antagonists to simple, nature-bound creatures.
 
