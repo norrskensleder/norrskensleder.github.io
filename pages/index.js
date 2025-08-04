@@ -4,7 +4,6 @@ import ArticleCard from '../components/ArticleCard';
 import { Box, Typography, Container, Chip, Grid } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useState } from 'react';
 
 export async function getStaticProps() {
   const posts = getSortedPostsData();
@@ -24,10 +23,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts, topTags }) {
-  const [selectedTag, setSelectedTag] = useState(null);
-  const filteredPosts = selectedTag
-    ? posts.filter(post => post.tags?.includes(selectedTag))
-    : posts;
   // Pick top 3 featured articles (most recent)
   const featured = posts.slice(0, 3);
   return (
@@ -59,17 +54,18 @@ export default function Home({ posts, topTags }) {
         {/* Tag Bar */}
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', mb: 4 }}>
           {topTags.map(tag => (
-            <Chip
+            <a
               key={tag}
-              label={tag}
-              color={selectedTag === tag ? 'secondary' : 'primary'}
-              onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-              sx={{ mr: 1, mb: 1, fontSize: 18, px: 2, py: 1, borderRadius: 2 }}
-            />
+              href={`/tag/${tag}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <Chip
+                label={tag}
+                color="primary"
+                sx={{ mr: 1, mb: 1, fontSize: 18, px: 2, py: 1, borderRadius: 2 }}
+              />
+            </a>
           ))}
-          {selectedTag && (
-            <Chip label="Clear" color="info" onClick={() => setSelectedTag(null)} sx={{ ml: 2, fontSize: 18, px: 2, py: 1, borderRadius: 2 }} />
-          )}
         </Box>
         {/* Featured Articles */}
         <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'primary.main' }}>Featured</Typography>
@@ -89,37 +85,20 @@ export default function Home({ posts, topTags }) {
             </Grid>
           ))}
         </Grid>
-        {/* Articles by Tag or All */}
-        {selectedTag ? (
-          <Box sx={{ mt: 5 }}>
-            <Typography variant="h5" gutterBottom>
-              {selectedTag.charAt(0).toUpperCase() + selectedTag.slice(1)}
-            </Typography>
+        {/* All Topics */}
+        <Typography variant="h4" sx={{ mt: 6, mb: 3, fontWeight: 600, color: 'primary.main' }}>All Topics</Typography>
+        {topTags.map(tag => (
+          <Box key={tag} sx={{ mt: 5 }}>
+            <Typography variant="h5" gutterBottom>{tag.charAt(0).toUpperCase() + tag.slice(1)}</Typography>
             <Grid container spacing={2}>
-              {filteredPosts.slice(0, 6).map(post => (
+              {posts.filter(post => post.tags?.includes(tag)).slice(0, 3).map(post => (
                 <Grid item xs={12} sm={6} md={4} key={post.slug}>
                   <ArticleCard post={post} />
                 </Grid>
               ))}
             </Grid>
           </Box>
-        ) : (
-          <>
-            <Typography variant="h4" sx={{ mt: 6, mb: 3, fontWeight: 600, color: 'primary.main' }}>All Topics</Typography>
-            {topTags.map(tag => (
-              <Box key={tag} sx={{ mt: 5 }}>
-                <Typography variant="h5" gutterBottom>{tag.charAt(0).toUpperCase() + tag.slice(1)}</Typography>
-                <Grid container spacing={2}>
-                  {posts.filter(post => post.tags?.includes(tag)).slice(0, 3).map(post => (
-                    <Grid item xs={12} sm={6} md={4} key={post.slug}>
-                      <ArticleCard post={post} />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            ))}
-          </>
-        )}
+        ))}
       </Container>
       <Footer />
     </>

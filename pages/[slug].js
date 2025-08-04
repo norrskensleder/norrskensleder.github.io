@@ -29,6 +29,29 @@ export default function Post({ post }) {
             <iframe width="100%" height="400" src={post.youtube.replace('watch?v=', 'embed/')} title="YouTube video" frameBorder="0" allowFullScreen></iframe>
           </Box>
         )}
+        {/* Example: render tags as relative links */}
+        {post.tags && (
+          <Box sx={{ mb: 2 }}>
+            {post.tags.map((tag) => (
+              <a
+                key={tag}
+                href={`/tag/${tag}`}
+                style={{
+                  display: 'inline-block',
+                  marginRight: 8,
+                  padding: '4px 12px',
+                  background: '#e0e0e0',
+                  borderRadius: 16,
+                  textDecoration: 'none',
+                  color: '#333',
+                  fontSize: 14,
+                }}
+              >
+                {tag}
+              </a>
+            ))}
+          </Box>
+        )}
         <Box sx={{ mt: 2 }}>
           <MarkdownWithGallery content={post.content} />
         </Box>
