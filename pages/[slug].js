@@ -13,7 +13,7 @@ export default function Post({ post }) {
   return (
     <>
       <Head>
-        <title>{post.title} | Experience Blog</title>
+        <title>{post.title} | Norrskensleder</title>
       </Head>
       <Navbar />
       <Container maxWidth="md" sx={{ mt: 4 }}>

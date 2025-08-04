@@ -49,7 +49,7 @@ export default function Home({ posts, topTags }) {
         position: 'relative',
       }}>
         <Typography variant="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '0 2px 16px #00336699' }}>
-          norrskensleder
+          Norrskensleder
         </Typography>
         <Typography variant="h5" sx={{ maxWidth: 600, mx: 'auto', textShadow: '0 2px 8px #00336699' }}>
           Adventures, tech, and stories from a South Asian in Northern Europe.
