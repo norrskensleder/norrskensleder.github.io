@@ -76,58 +76,28 @@ function groupImages(children) {
 }
 
 function MarkdownWithGallery({ content }) {
-  // Split content into lines and group consecutive image lines
-  const lines = content.split('\n');
-  const groups = [];
-  let currentImages = [];
-  let currentText = [];
-
-  // Regex to match markdown images: ![alt](src)
-  const imageRegex = /^!\[(.*)\]\((.*)\)$/;
-
-  function flushText() {
-    if (currentText.length > 0) {
-      groups.push({ type: 'text', text: currentText.join('\n') });
-      currentText = [];
-    }
-  }
-
-  lines.forEach(line => {
-    const match = line.match(imageRegex);
-    if (match) {
-      flushText();
-      currentImages.push({ src: match[2], alt: match[1] });
-    } else {
-      if (currentImages.length > 0) {
-        groups.push({ type: 'gallery', images: currentImages });
-        currentImages = [];
-      }
-      currentText.push(line);
-    }
-  });
-  if (currentImages.length > 0) {
-    groups.push({ type: 'gallery', images: currentImages });
-  }
-  flushText();
+  // Split content by <!--gallery--> marker
+  const blocks = content.split(/<!--gallery-->/g);
+  const galleryImageRegex = /^!\[(.*)\]\((.*)\)$/;
 
   return (
     <>
-      {groups.map((group, idx) => {
-        if (group.type === 'gallery') {
-          return <Gallery key={idx} images={group.images} />;
+      {blocks.map((block, idx) => {
+        // Check if this block is a gallery (contains only images, at least 2)
+        const lines = block.trim().split('\n').filter(Boolean);
+        const images = lines
+          .map(line => {
+            const match = line.match(galleryImageRegex);
+            return match ? { src: match[2], alt: match[1] } : null;
+          })
+          .filter(Boolean);
+        // Only render as gallery if all lines are images and there are at least 2
+        if (images.length >= 2 && images.length === lines.length && lines.length > 0) {
+          return <Gallery key={idx} images={images} />;
         } else {
+          // Otherwise, render as normal markdown
           return (
-            <ReactMarkdown
-              key={idx}
-              remarkPlugins={[remarkGfm]}
-              components={{
-                img({ node, ...props }) {
-                  return <img style={{ maxWidth: '100%', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0' }} {...props} />;
-                },
-              }}
-            >
-              {group.text}
-            </ReactMarkdown>
+            <ReactMarkdown key={idx} remarkPlugins={[remarkGfm]}>{block}</ReactMarkdown>
           );
         }
       })}
