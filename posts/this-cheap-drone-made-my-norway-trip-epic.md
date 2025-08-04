@@ -31,12 +31,10 @@ Drones in Europe are regulated under rules set by **EASA** (European Union Aviat
 
 Drones are categorized under the **Open Category** for low-risk operations. This is divided into three subcategories:
 
-| Class | Weight | Allowed Flight                   | Requires License |
-| - | - | - | - |
-| C0    | < 250g | Over people (not crowds)         | Usually no       |
-| C1    | < 900g | Near people, but not over crowds | Yes (A1)         |
-| C2    | < 4kg  | Near people with distance        | Yes (A2)         |
-| C3-C4 | < 25kg | Far from people                  | Yes (A3)         |
+1. **class C0**: weight under 250g, allowed to fly over people but not over crowda, usually not required license.
+2. **class C1**: weight under 900g, allowed to fly near people but not over crowds, usually requires A1 license to fly.
+3. **class C2**: weight under 4kg, allowed to fly near people with distance, usually requires A2 license to fly such drones.
+4. **class C3 - C4**: weight under 25kg, should fly far from people, usually requires A3 license to fly such UAS(Unmanned Aircraft System).
 
 You can usually find the class label on your drone or its packaging. If there’s no class marking (as with older drones), stricter rules apply.
 
