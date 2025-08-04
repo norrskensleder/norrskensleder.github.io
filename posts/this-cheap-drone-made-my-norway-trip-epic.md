@@ -31,12 +31,10 @@ Drones in Europe are regulated under rules set by **EASA** (European Union Aviat
 
 Drones are categorized under the **Open Category** for low-risk operations. This is divided into three subcategories:
 
-| Class | Weight | Allowed Flight                   | Requires License |
-| ----- | ------ | -------------------------------- | ---------------- |
-| C0    | < 250g | Over people (not crowds)         | Usually no       |
-| C1    | < 900g | Near people, but not over crowds | Yes (A1)         |
-| C2    | < 4kg  | Near people with distance        | Yes (A2)         |
-| C3-C4 | < 25kg | Far from people                  | Yes (A3)         |
+1. **class C0**: weight under 250g, allowed to fly over people but not over crowda, usually not required license.
+2. **class C1**: weight under 900g, allowed to fly near people but not over crowds, usually requires A1 license to fly.
+3. **class C2**: weight under 4kg, allowed to fly near people with distance, usually requires A2 license to fly such drones.
+4. **class C3 - C4**: weight under 25kg, should fly far from people, usually requires A3 license to fly such UAS(Unmanned Aircraft System).
 
 You can usually find the class label on your drone or its packaging. If there’s no class marking (as with older drones), stricter rules apply.
 
@@ -93,28 +91,23 @@ Use apps or official websites to check **no-fly zones and airspace restrictions*
 So here’s what I did:
 
 1. **Registered at flydrone.no**. You can sign up as a private person, an organization, or a drone pilot.
-
 2. After a few hours, they approved my application and sent a payment link.
-
 3. I paid around **20 euros** for the year.
-
 4. Then I selected the **A1/A3 course** — which is good for most hobby flights.
-
 5. After going through the course materials, I took the **online exam**, which was a simple multiple-choice test.
-
 6. **Boom**! Passed it, got the license, and I was good to go!
 
-![My Drone License](/images/drone/license.png)
+![My Drone License](/images/drone/license.jpeg)
 
 Once you have a drone license from any EASA member country, it’s valid across all of Europe (within the EASA zone). That means my Norwegian license lets me fly in countries like France, Spain, Germany, and others — as long as I follow their local laws and restrictions. Pretty convenient!
 
 For the **A2 license**, you need extra skills and have to take an in-person exam at a local traffic station.
 
-## Norway Road Trip with My Drone – Watch the Videos!
+## Norway Road Trip with My Drone – Watch the Videos
 
 Yes — I flew the drone! And not just that, I captured some jaw-dropping views of Norway’s fjords, mountains, waterfalls, and open skies. Check out the videos below 👇
 
-[Watch the video](https://www.youtube.com/watch?v=kLCW1NC5A0E)
+https://www.youtube.com/watch?v=kLCW1NC5A0E
 
 ## Some Drone Shots from the Trip
 

@@ -8,7 +8,7 @@ export default function Navbar() {
       <Toolbar>
         <img src="/norrskensleder/logo.svg" alt="norrskensleder logo" style={{ height: 36, marginRight: 12, borderRadius: 6 }} />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>norrskensleder</Link>
+          <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Norrskensleder</Link>
         </Typography>
         <Button color="inherit" component={Link} href="/blog">Blog</Button>
         <Button color="inherit" component={Link} href="/about">About</Button>
