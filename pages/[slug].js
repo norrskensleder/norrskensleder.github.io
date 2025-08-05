@@ -8,6 +8,7 @@ import React, { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Gallery from '../components/Gallery';
+import LikeDislike from '../components/LikeDislike';
 
 export default function Post({ post }) {
   return (
@@ -54,6 +55,9 @@ export default function Post({ post }) {
         )}
         <Box sx={{ mt: 2 }}>
           <MarkdownWithGallery content={post.content} />
+        </Box>
+        <Box sx={{ mt: 4 }}>
+          <LikeDislike slug={post.slug} />
         </Box>
       </Container>
       <Footer />
