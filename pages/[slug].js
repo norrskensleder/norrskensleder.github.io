@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Gallery from '../components/Gallery';
 import LikeDislike from '../components/LikeDislike';
+import CommentBox from '../components/CommentBox';
 
 export default function Post({ post }) {
   return (
@@ -58,6 +59,9 @@ export default function Post({ post }) {
         </Box>
         <Box sx={{ mt: 4 }}>
           <LikeDislike slug={post.slug} />
+        </Box>
+        <Box sx={{ mt: 4 }}>
+          <CommentBox slug={post.slug} />
         </Box>
       </Container>
       <Footer />
