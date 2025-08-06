@@ -1,0 +1,59 @@
+# robots.txt for Norrskensleder blog
+# Allow all web crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://norrskensleder.github.io/sitemap.xml
+Sitemap: https://norrskensleder.github.io/sitemap-posts.xml
+
+# Specific crawl rules
+# Allow blog content
+Allow: /blog
+Allow: /posts/
+Allow: /tag/
+
+# Allow static assets
+Allow: /norrskensleder/
+Allow: /images/
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay for respectful crawling (in seconds)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Social media bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block abusive bots (add as needed)
+# User-agent: BadBot
+# Disallow: /
+
+# Additional notes:
+# - This site focuses on Nordic travel and technology content
+# - All pages are public and crawlable
+# - Images and media files are allowed for indexing
+# - Contact and about pages are public
