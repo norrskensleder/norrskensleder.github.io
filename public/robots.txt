@@ -5,8 +5,8 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://norrskensleder.github.io/sitemap.xml
-Sitemap: https://norrskensleder.github.io/sitemap-posts.xml
+Sitemap: https://norrskensleder.com/sitemap.xml
+Sitemap: https://norrskensleder.com/sitemap-posts.xml
 
 # Specific crawl rules
 # Allow blog content
