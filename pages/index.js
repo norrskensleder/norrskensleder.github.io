@@ -81,6 +81,11 @@ export default function Home({ posts, topTags }) {
               xs={12}         // Full width on mobile
               md={6}          // 50% width on medium+
               key={post.slug}
+              sx={{
+                flexGrow: 0,    // prevent stretching beyond 50%
+                maxWidth: { md: '48%' },
+                flexBasis: { md: '48%' }
+              }}
             >
               <Box
                 sx={{
@@ -99,7 +104,7 @@ export default function Home({ posts, topTags }) {
                     alt={post.title}
                     sx={{
                       width: '100%',
-                      height: 220,
+                      height: 320,
                       objectFit: 'cover',
                       filter: 'brightness(0.85)'
                     }}
@@ -161,8 +166,8 @@ export default function Home({ posts, topTags }) {
                     md={4} // Keep MUI's breakpoint but tweak width
                     key={post.slug}
                     sx={{
-                      flexBasis: { md: '35%', lg: '35%' },
-                      maxWidth: { md: '35%', lg: '35%' }
+                      flexBasis: { md: '32%', lg: '32%' },
+                      maxWidth: { md: '32%', lg: '32%' }
                     }}
                   >
                     <ArticleCard post={post} />
