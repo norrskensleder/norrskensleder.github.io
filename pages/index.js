@@ -68,37 +68,110 @@ export default function Home({ posts, topTags }) {
           ))}
         </Box>
         {/* Featured Articles */}
-        <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, color: 'primary.main' }}>Featured</Typography>
+        <Typography
+          variant="h4"
+          sx={{ mb: 3, fontWeight: 600, color: 'primary.main' }}
+        >
+          Featured
+        </Typography>
         <Grid container spacing={4} sx={{ mb: 6 }}>
           {featured.map(post => (
-            <Grid item xs={12} sm={6} md={4} key={post.slug}>
-              <Box sx={{ position: 'relative', borderRadius: 4, overflow: 'hidden', boxShadow: 3, transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.03)' } }}>
+            <Grid
+              item
+              xs={12}         // Full width on mobile
+              md={6}          // 50% width on medium+
+              key={post.slug}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  boxShadow: 3,
+                  transition: 'transform 0.2s',
+                  '&:hover': { transform: 'scale(1.03)' }
+                }}
+              >
                 {post.coverImage && (
-                  <Box component="img" src={post.coverImage} alt={post.title} sx={{ width: '100%', height: 220, objectFit: 'cover', filter: 'brightness(0.85)' }} />
+                  <Box
+                    component="img"
+                    src={post.coverImage}
+                    alt={post.title}
+                    sx={{
+                      width: '100%',
+                      height: 220,
+                      objectFit: 'cover',
+                      filter: 'brightness(0.85)'
+                    }}
+                  />
                 )}
-                <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', bgcolor: 'rgba(0,0,0,0.55)', color: '#fff', p: 2 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 700 }}>{post.title}</Typography>
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: '100%',
+                    bgcolor: 'rgba(0,0,0,0.55)',
+                    color: '#fff',
+                    p: 2
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                    {post.title}
+                  </Typography>
                   <Typography variant="body2">{post.date}</Typography>
                 </Box>
-                <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} component="a" href={`/${post.slug}`}></Box>
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%'
+                  }}
+                  component="a"
+                  href={`/${post.slug}`}
+                />
               </Box>
             </Grid>
           ))}
         </Grid>
+
         {/* All Topics */}
-        <Typography variant="h4" sx={{ mt: 6, mb: 3, fontWeight: 600, color: 'primary.main' }}>All Topics</Typography>
+        <Typography
+          variant="h4"
+          sx={{ mt: 6, mb: 3, fontWeight: 600, color: 'primary.main' }}
+        >
+          All Topics
+        </Typography>
         {topTags.map(tag => (
           <Box key={tag} sx={{ mt: 5 }}>
-            <Typography variant="h5" gutterBottom>{tag.charAt(0).toUpperCase() + tag.slice(1)}</Typography>
+            <Typography variant="h5" gutterBottom>
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </Typography>
             <Grid container spacing={2}>
-              {posts.filter(post => post.tags?.includes(tag)).slice(0, 3).map(post => (
-                <Grid item xs={12} sm={6} md={4} key={post.slug}>
-                  <ArticleCard post={post} />
-                </Grid>
-              ))}
+              {posts
+                .filter(post => post.tags?.includes(tag))
+                .slice(0, 3)
+                .map(post => (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    md={4} // Keep MUI's breakpoint but tweak width
+                    key={post.slug}
+                    sx={{
+                      flexBasis: { md: '35%', lg: '35%' },
+                      maxWidth: { md: '35%', lg: '35%' }
+                    }}
+                  >
+                    <ArticleCard post={post} />
+                  </Grid>
+                ))}
             </Grid>
           </Box>
         ))}
+
       </Container>
       <Footer />
     </>
