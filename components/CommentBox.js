@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 import { db } from "../lib/firebase";
 import { collection, addDoc, query, orderBy, onSnapshot } from "firebase/firestore";
-import { 
-  Box, 
-  Typography, 
-  TextField, 
-  Button, 
-  List, 
-  ListItem, 
-  ListItemText, 
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
   ListItemAvatar,
   Avatar,
-  Paper, 
-  Alert, 
+  Paper,
+  Alert,
   CircularProgress,
   Divider,
   Chip,
   Fade,
   Skeleton
 } from '@mui/material';
-import { 
-  Send, 
-  Comment, 
+import {
+  Send,
+  Comment,
   Person,
   CheckCircle,
   Error as ErrorIcon
@@ -38,17 +38,25 @@ export default function CommentBox({ slug }) {
 
   useEffect(() => {
     const q = query(collection(db, "comments", slug, "items"), orderBy("created", "asc"));
-    const unsub = onSnapshot(q, 
+    const unsub = onSnapshot(q,
+
       (snap) => {
-        setComments(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+          setComments(snap.docs.map(doc => ({ id: doc.id, ...({ id: doc.id, ...doc.data() }) })));
         setLoading(false);
         setError(null);
       },
       (err) => {
         console.error('Error loading comments:', err);
         setError('Failed to load comments. Please check your internet connection and try again.');
+          setLoading(false);
+        setError(null);
+      },
+      (err) => {
+        console.error('Error loading comments:', err);
+        setError('Failed to load comments. Please check your internet connection and try again.');
         setLoading(false);
-      }
+        }
+
     );
     return () => unsub();
   }, [slug]);
@@ -56,18 +64,33 @@ export default function CommentBox({ slug }) {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
-    
+
     setSubmitting(true);
     setError(null);
     setSuccess(false);
-    
+
+    try {
+
+    setSubmitting(true);
+    setError(null);
+    setSuccess(false);
+
     try {
       await addDoc(collection(db, "comments", slug, "items"), {
-        name: name.trim(),
-        text: text.trim(),
-        created: Date.now(),
-      });
-      setText("");
+          name: name.trim(),
+          text: text.trim(),
+          created: Date.now(),
+        });
+        setText("");
+      setSuccess(true);
+      // Clear success message after 3 seconds
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err) {
+      console.error('Error posting comment:', err);
+      setError('Failed to post comment. Please check your internet connection and try again.');
+    } finally {
+      setSubmitting(false);
+    }
       setSuccess(true);
       // Clear success message after 3 seconds
       setTimeout(() => setSuccess(false), 3000);
@@ -108,11 +131,11 @@ export default function CommentBox({ slug }) {
           Comments ({comments.length})
         </Typography>
       </Box>
-      
+
       {/* Success Message */}
       <Fade in={success}>
-        <Alert 
-          severity="success" 
+        <Alert
+          severity="success"
           icon={<CheckCircle />}
           sx={{ mb: 2 }}
           onClose={() => setSuccess(false)}
@@ -120,11 +143,11 @@ export default function CommentBox({ slug }) {
           Comment posted successfully!
         </Alert>
       </Fade>
-      
+
       {/* Error Message */}
       {error && (
-        <Alert 
-          severity="error" 
+        <Alert
+          severity="error"
           icon={<ErrorIcon />}
           sx={{ mb: 2 }}
           onClose={() => setError(null)}
@@ -134,11 +157,11 @@ export default function CommentBox({ slug }) {
       )}
 
       {/* Comment Form */}
-      <Paper 
-        elevation={2} 
-        sx={{ 
-          p: 3, 
-          mb: 3, 
+      <Paper
+        elevation={2}
+        sx={{
+          p: 3,
+          mb: 3,
           borderRadius: 3,
           backgroundColor: 'background.paper',
           border: '1px solid',
@@ -149,7 +172,7 @@ export default function CommentBox({ slug }) {
           <Person sx={{ mr: 1 }} />
           Join the conversation
         </Typography>
-        
+
         <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <TextField
             label="Your name"
@@ -164,7 +187,7 @@ export default function CommentBox({ slug }) {
               startAdornment: <Person sx={{ mr: 1, color: 'text.secondary' }} />
             }}
           />
-          
+
           <TextField
             label="Your comment"
             variant="outlined"
@@ -178,13 +201,13 @@ export default function CommentBox({ slug }) {
             sx={{ backgroundColor: 'background.default' }}
             placeholder="Share your thoughts..."
           />
-          
+
           <Button
             type="submit"
             variant="contained"
             disabled={submitting || !name.trim() || !text.trim()}
             startIcon={submitting ? <CircularProgress size={20} color="inherit" /> : <Send />}
-            sx={{ 
+            sx={{
               alignSelf: 'flex-end',
               borderRadius: 2,
               px: 3,
@@ -213,8 +236,8 @@ export default function CommentBox({ slug }) {
           ))}
         </Box>
       ) : error && comments.length === 0 ? (
-        <Paper sx={{ 
-          p: 4, 
+        <Paper sx={{
+          p: 4,
           textAlign: 'center',
           backgroundColor: 'error.lighter',
           borderRadius: 3
@@ -228,8 +251,8 @@ export default function CommentBox({ slug }) {
           </Typography>
         </Paper>
       ) : comments.length === 0 ? (
-        <Paper sx={{ 
-          p: 4, 
+        <Paper sx={{
+          p: 4,
           textAlign: 'center',
           backgroundColor: 'grey.50',
           borderRadius: 3,
@@ -245,7 +268,7 @@ export default function CommentBox({ slug }) {
           </Typography>
         </Paper>
       ) : (
-        <List sx={{ 
+        <List sx={{
           backgroundColor: 'background.paper',
           borderRadius: 3,
           overflow: 'hidden',
@@ -254,9 +277,9 @@ export default function CommentBox({ slug }) {
         }}>
           {comments.map((comment, index) => (
             <Box key={comment.id || index}>
-              <ListItem 
-                alignItems="flex-start" 
-                sx={{ 
+              <ListItem
+                alignItems="flex-start"
+                sx={{
                   py: 2,
                   '&:hover': {
                     backgroundColor: 'action.hover'
@@ -264,7 +287,7 @@ export default function CommentBox({ slug }) {
                 }}
               >
                 <ListItemAvatar>
-                  <Avatar sx={{ 
+                  <Avatar sx={{
                     bgcolor: 'primary.main',
                     color: 'primary.contrastText',
                     fontWeight: 'bold'
@@ -272,7 +295,7 @@ export default function CommentBox({ slug }) {
                     {getInitials(comment.name)}
                   </Avatar>
                 </ListItemAvatar>
-                
+
                 <ListItemText
                   primary={
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 0.5 }}>
@@ -280,11 +303,11 @@ export default function CommentBox({ slug }) {
                         {comment.name}
                       </Typography>
                       {comment.created && (
-                        <Chip 
+                        <Chip
                           label={formatDate(comment.created)}
                           size="small"
                           variant="outlined"
-                          sx={{ 
+                          sx={{
                             height: 20,
                             fontSize: '0.75rem',
                             color: 'text.secondary',
@@ -299,7 +322,7 @@ export default function CommentBox({ slug }) {
                       component="div"
                       variant="body2"
                       color="text.primary"
-                      sx={{ 
+                      sx={{
                         mt: 1,
                         lineHeight: 1.6,
                         wordBreak: 'break-word'

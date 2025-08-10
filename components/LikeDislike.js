@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { db } from "../lib/firebase";
 import { doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
-import { 
-  Box, 
-  Button, 
-  Typography, 
-  Paper, 
-  Alert, 
+import {
+  Box,
+  Button,
+  Typography,
+  Paper,
+  Alert,
   CircularProgress,
   Fade,
   Chip,
   ButtonGroup,
   Skeleton
 } from '@mui/material';
-import { 
-  ThumbUp, 
-  ThumbDown, 
-  ThumbUpOutlined, 
+import {
+  ThumbUp,
+  ThumbDown,
+  ThumbUpOutlined,
   ThumbDownOutlined,
   Error as ErrorIcon,
   CheckCircle
@@ -50,9 +50,9 @@ export default function LikeDislike({ slug }) {
         setLoading(false);
       }
     }
-    
+
     fetchCounts();
-    
+
     // Check if user has voted today (with error handling for localStorage)
     try {
       setVoted(!!localStorage.getItem(getTodayKey(slug)));
@@ -64,24 +64,24 @@ export default function LikeDislike({ slug }) {
 
   async function handleVote(type) {
     if (voted || voting) return;
-    
+
     setVoting(true);
     setError(null);
-    
+
     try {
       const ref = doc(db, "likes", slug);
       await setDoc(ref, { like: 0, dislike: 0 }, { merge: true });
       await updateDoc(ref, { [type]: increment(1) });
       const snap = await getDoc(ref);
       setCounts(snap.data());
-      
+
       // Save vote to localStorage with error handling
       try {
         localStorage.setItem(getTodayKey(slug), "1");
       } catch (err) {
         console.warn('Cannot save to localStorage:', err);
       }
-      
+
       setVoted(true);
     } catch (err) {
       console.error('Error voting:', err);
@@ -105,12 +105,12 @@ export default function LikeDislike({ slug }) {
 
   return (
     <Box sx={{ my: 4, textAlign: 'center' }}>
-      <Paper 
-        elevation={3} 
-        sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          maxWidth: 400, 
+      <Paper
+        elevation={3}
+        sx={{
+          p: 3,
+          borderRadius: 3,
+          maxWidth: 400,
           mx: 'auto',
           backgroundColor: 'background.paper',
           border: '1px solid',
@@ -120,12 +120,12 @@ export default function LikeDislike({ slug }) {
         <Typography variant="h6" gutterBottom sx={{ mb: 2, color: 'text.primary' }}>
           Was this helpful?
         </Typography>
-        
+
         {/* Error Message */}
         {error && (
           <Fade in={!!error}>
-            <Alert 
-              severity="error" 
+            <Alert
+              severity="error"
               icon={<ErrorIcon />}
               sx={{ mb: 2 }}
               onClose={() => setError(null)}
@@ -134,12 +134,12 @@ export default function LikeDislike({ slug }) {
             </Alert>
           </Fade>
         )}
-        
+
         {/* Voting Buttons */}
-        <ButtonGroup 
-          variant="contained" 
+        <ButtonGroup
+          variant="contained"
           size="large"
-          sx={{ 
+          sx={{
             mb: 2,
             boxShadow: 'none',
             '& .MuiButton-root': {
@@ -163,7 +163,7 @@ export default function LikeDislike({ slug }) {
           <Button
             onClick={() => handleVote("like")}
             disabled={voted || voting}
-            startIcon={voting ? <CircularProgress size={20} color="inherit" /> : 
+            startIcon={voting ? <CircularProgress size={20} color="inherit" /> :
                      voted ? <ThumbUp /> : <ThumbUpOutlined />}
             sx={{
               backgroundColor: voted ? 'success.light' : 'success.main',
@@ -179,11 +179,11 @@ export default function LikeDislike({ slug }) {
           >
             {counts.like || 0}
           </Button>
-          
+
           <Button
             onClick={() => handleVote("dislike")}
             disabled={voted || voting}
-            startIcon={voting ? <CircularProgress size={20} color="inherit" /> : 
+            startIcon={voting ? <CircularProgress size={20} color="inherit" /> :
                      voted ? <ThumbDown /> : <ThumbDownOutlined />}
             sx={{
               backgroundColor: voted ? 'error.light' : 'error.main',
@@ -200,12 +200,12 @@ export default function LikeDislike({ slug }) {
             {counts.dislike || 0}
           </Button>
         </ButtonGroup>
-        
+
         {/* Status Messages */}
         {voted && (
           <Fade in={voted}>
             <Box>
-              <Chip 
+              <Chip
                 icon={<CheckCircle />}
                 label="Thanks for your feedback!"
                 color="primary"
@@ -218,13 +218,13 @@ export default function LikeDislike({ slug }) {
             </Box>
           </Fade>
         )}
-        
+
         {voting && !voted && (
           <Typography variant="body2" color="primary.main" sx={{ fontStyle: 'italic' }}>
             Recording your feedback...
           </Typography>
         )}
-        
+
         {/* Vote Count Summary */}
         {(counts.like > 0 || counts.dislike > 0) && (
           <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
