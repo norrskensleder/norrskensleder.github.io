@@ -1,71 +1,204 @@
-// Dynamic blog article page
-import { Container, Typography, Box } from '@mui/material';
+// Enhanced dynamic blog article page with SEO and accessibility
+import { Container, Typography, Box, Chip, Breadcrumbs } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getPostData, getSortedPostsData } from '../lib/posts';
-import Head from 'next/head';
 import React, { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Gallery from '../components/Gallery';
 import LikeDislike from '../components/LikeDislike';
 import CommentBox from '../components/CommentBox';
+import SEO, { generateArticleSEO } from '../components/SEO';
+import { AccessibleHeading, Landmark } from '../components/Accessibility';
+import { Home, Tag } from '@mui/icons-material';
+import Link from 'next/link';
 
 export default function Post({ post }) {
+  const seoProps = generateArticleSEO(post);
+
   return (
     <>
-      <Head>
-        <title>{post.title} | Norrskensleder</title>
-      </Head>
+      <SEO {...seoProps} />
       <Navbar />
-      <Container maxWidth="md" sx={{ mt: 4 }}>
-        <Typography variant="h3" gutterBottom>{post.title}</Typography>
-        <Typography variant="subtitle2" color="text.secondary" gutterBottom>{post.date}</Typography>
-        {post.coverImage && (
-          <Box sx={{ my: 2, textAlign: 'center' }}>
-            <img src={post.coverImage} alt={post.title} style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622' }} />
-          </Box>
-        )}
-        {post.youtube && (
-          <Box sx={{ my: 2 }}>
-            <iframe width="100%" height="400" src={post.youtube.replace('watch?v=', 'embed/')} title="YouTube video" frameBorder="0" allowFullScreen></iframe>
-          </Box>
-        )}
-        {/* Example: render tags as relative links */}
-        {post.tags && (
-          <Box sx={{ mb: 2 }}>
-            {post.tags.map((tag) => (
-              <a
-                key={tag}
-                href={`/tag/${tag}`}
-                style={{
-                  display: 'inline-block',
-                  marginRight: 8,
-                  padding: '4px 12px',
-                  background: '#e0e0e0',
-                  borderRadius: 16,
-                  textDecoration: 'none',
-                  color: '#333',
-                  fontSize: 14,
-                }}
-              >
-                {tag}
+
+      <Landmark role="main" id="main-content" aria-label="Blog post content">
+        <Container maxWidth="md" sx={{ mt: 4 }}>
+          {/* Breadcrumb navigation for accessibility */}
+          <Breadcrumbs
+            aria-label="Breadcrumb navigation"
+            sx={{ mb: 3 }}
+            separator="›"
+          >
+            <Link href="/" legacyBehavior>
+              <a style={{ display: 'flex', alignItems: 'center', color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
+                <Home style={{ marginRight: '4px', fontSize: 20 }} />
+                Home
               </a>
-            ))}
+            </Link>
+
+            <Link href="/blog" legacyBehavior>
+              <a style={{ color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
+                Blog
+              </a>
+            </Link>
+
+            <Typography color="text.primary">{post.title}</Typography>
+          </Breadcrumbs>
+
+          {/* Article header */}
+          <Box component="header" sx={{ mb: 4 }}>
+            <AccessibleHeading level={1} sx={{ mb: 2 }}>
+              {post.title}
+            </AccessibleHeading>
+
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 2 }}>
+              <Typography
+                variant="subtitle2"
+                color="text.secondary"
+                component="time"
+                dateTime={post.date}
+              >
+                Published: {new Date(post.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </Typography>
+
+              {post.readingTime && (
+                <Typography variant="subtitle2" color="text.secondary">
+                  • {post.readingTime} min read
+                </Typography>
+              )}
+            </Box>
+
+            {/* Tags */}
+            {post.tags && (
+              <Box sx={{ mb: 3 }} role="navigation" aria-label="Article tags">
+                {post.tags.map((tag) => (
+                  <Chip
+                    key={tag}
+                    label={tag}
+                    component={Link}
+                    href={`/tag/${tag}`}
+                    clickable
+                    size="small"
+                    icon={<Tag fontSize="small" />}
+                    sx={{ mr: 1, mb: 1 }}
+                    aria-label={`View all posts tagged with ${tag}`}
+                  />
+                ))}
+              </Box>
+            )}
           </Box>
-        )}
-        <Box sx={{ mt: 2 }}>
-          <MarkdownWithGallery content={post.content} />
-        </Box>
-        <Box sx={{ mt: 4 }}>
-          <LikeDislike slug={post.slug} />
-        </Box>
-        <Box sx={{ mt: 4 }}>
-          <CommentBox slug={post.slug} />
-        </Box>
-      </Container>
+
+          {/* Cover image with proper accessibility */}
+          {post.coverImage && (
+            <figure style={{ margin: '24px 0', textAlign: 'center' }}>
+              <img
+                src={post.coverImage}
+                alt={post.imageAlt || `Cover image for "${post.title}"`}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 2px 16px #00336622'
+                }}
+                loading="lazy"
+              />
+              {post.imageCaption && (
+                <figcaption style={{
+                  marginTop: 8,
+                  fontSize: '0.875rem',
+                  color: '#666',
+                  fontStyle: 'italic'
+                }}>
+                  {post.imageCaption}
+                </figcaption>
+              )}
+            </figure>
+          )}
+
+          {/* YouTube video with accessibility */}
+          {post.youtube && (
+            <Box sx={{ my: 3 }}>
+              <iframe
+                width="100%"
+                height="400"
+                src={post.youtube.replace('watch?v=', 'embed/')}
+                title={`YouTube video: ${post.title}`}
+                frameBorder="0"
+                allowFullScreen
+                aria-describedby="video-description"
+              />
+              <Typography
+                id="video-description"
+                variant="caption"
+                sx={{ display: 'block', mt: 1, color: 'text.secondary' }}
+              >
+                Embedded video related to this article
+              </Typography>
+            </Box>
+          )}
+
+          {/* Article content */}
+          <Box
+            component="article"
+            sx={{ mt: 3, mb: 4 }}
+            aria-label="Article content"
+          >
+            <MarkdownWithGallery content={post.content} />
+          </Box>
+
+          {/* Reading progress indicator */}
+          <Box sx={{ position: 'fixed', top: 0, left: 0, right: 0, height: 4, zIndex: 1000 }}>
+            <ReadingProgress />
+          </Box>
+
+          {/* Article footer */}
+          <Box component="footer" sx={{ mt: 6 }}>
+            <LikeDislike slug={post.slug} />
+            <CommentBox slug={post.slug} />
+          </Box>
+        </Container>
+      </Landmark>
+
       <Footer />
     </>
+  );
+}
+
+// Reading progress indicator component
+function ReadingProgress() {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setProgress(Math.min(scrollPercent, 100));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <Box
+      sx={{
+        width: `${progress}%`,
+        height: '100%',
+        background: 'linear-gradient(90deg, #005cbf 0%, #0070f3 100%)',
+        transition: 'width 0.1s ease-out'
+      }}
+      role="progressbar"
+      aria-valuenow={Math.round(progress)}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label="Reading progress"
+    />
   );
 }
 
