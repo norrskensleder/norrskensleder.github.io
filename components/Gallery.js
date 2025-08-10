@@ -39,18 +39,20 @@ export default function Gallery({ images }) {
           )}
         </div>
       ))}
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={slides}
-        index={index}
-        on={{ view: ({ index }) => setIndex(index) }}
-        render={{
-          description: ({ description }) => description && (
-            <div style={{ textAlign: 'center', marginTop: 8, color: '#fff', fontSize: 16 }}>{description}</div>
-          )
-        }}
-      />
+      {open && (
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          slides={slides}
+          index={index}
+          on={{ view: ({ index }) => setIndex(index) }}
+          render={{
+            description: ({ description }) => description && (
+              <div style={{ textAlign: 'center', marginTop: 8, color: '#fff', fontSize: 16 }}>{description}</div>
+            )
+          }}
+        />
+      )}
     </div>
   );
 }
