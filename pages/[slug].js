@@ -21,26 +21,28 @@ export default function Post({ post }) {
     <>
       <SEO {...seoProps} />
       <Navbar />
-      
+
       <Landmark role="main" id="main-content" aria-label="Blog post content">
         <Container maxWidth="md" sx={{ mt: 4 }}>
           {/* Breadcrumb navigation for accessibility */}
-          <Breadcrumbs 
-            aria-label="Breadcrumb navigation" 
+          <Breadcrumbs
+            aria-label="Breadcrumb navigation"
             sx={{ mb: 3 }}
             separator="›"
           >
-            <Link href="/" passHref>
-              <Box component="a" sx={{ display: 'flex', alignItems: 'center', color: 'primary.main', textDecoration: 'none' }}>
-                <Home sx={{ mr: 0.5, fontSize: 20 }} />
+            <Link href="/" legacyBehavior>
+              <a style={{ display: 'flex', alignItems: 'center', color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
+                <Home style={{ marginRight: '4px', fontSize: 20 }} />
                 Home
-              </Box>
+              </a>
             </Link>
-            <Link href="/blog" passHref>
-              <Box component="a" sx={{ color: 'primary.main', textDecoration: 'none' }}>
+
+            <Link href="/blog" legacyBehavior>
+              <a style={{ color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
                 Blog
-              </Box>
+              </a>
             </Link>
+
             <Typography color="text.primary">{post.title}</Typography>
           </Breadcrumbs>
 
@@ -49,10 +51,10 @@ export default function Post({ post }) {
             <AccessibleHeading level={1} sx={{ mb: 2 }}>
               {post.title}
             </AccessibleHeading>
-            
+
             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 2 }}>
-              <Typography 
-                variant="subtitle2" 
+              <Typography
+                variant="subtitle2"
                 color="text.secondary"
                 component="time"
                 dateTime={post.date}
@@ -63,7 +65,7 @@ export default function Post({ post }) {
                   day: 'numeric'
                 })}
               </Typography>
-              
+
               {post.readingTime && (
                 <Typography variant="subtitle2" color="text.secondary">
                   • {post.readingTime} min read
@@ -94,21 +96,21 @@ export default function Post({ post }) {
           {/* Cover image with proper accessibility */}
           {post.coverImage && (
             <figure style={{ margin: '24px 0', textAlign: 'center' }}>
-              <img 
-                src={post.coverImage} 
+              <img
+                src={post.coverImage}
                 alt={post.imageAlt || `Cover image for "${post.title}"`}
-                style={{ 
-                  maxWidth: '100%', 
-                  height: 'auto', 
-                  borderRadius: 8, 
-                  boxShadow: '0 2px 16px #00336622' 
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 2px 16px #00336622'
                 }}
                 loading="lazy"
               />
               {post.imageCaption && (
-                <figcaption style={{ 
-                  marginTop: 8, 
-                  fontSize: '0.875rem', 
+                <figcaption style={{
+                  marginTop: 8,
+                  fontSize: '0.875rem',
                   color: '#666',
                   fontStyle: 'italic'
                 }}>
@@ -121,18 +123,18 @@ export default function Post({ post }) {
           {/* YouTube video with accessibility */}
           {post.youtube && (
             <Box sx={{ my: 3 }}>
-              <iframe 
-                width="100%" 
-                height="400" 
-                src={post.youtube.replace('watch?v=', 'embed/')} 
+              <iframe
+                width="100%"
+                height="400"
+                src={post.youtube.replace('watch?v=', 'embed/')}
                 title={`YouTube video: ${post.title}`}
-                frameBorder="0" 
+                frameBorder="0"
                 allowFullScreen
                 aria-describedby="video-description"
               />
-              <Typography 
-                id="video-description" 
-                variant="caption" 
+              <Typography
+                id="video-description"
+                variant="caption"
                 sx={{ display: 'block', mt: 1, color: 'text.secondary' }}
               >
                 Embedded video related to this article
@@ -141,8 +143,8 @@ export default function Post({ post }) {
           )}
 
           {/* Article content */}
-          <Box 
-            component="article" 
+          <Box
+            component="article"
             sx={{ mt: 3, mb: 4 }}
             aria-label="Article content"
           >
@@ -161,7 +163,7 @@ export default function Post({ post }) {
           </Box>
         </Container>
       </Landmark>
-      
+
       <Footer />
     </>
   );

@@ -20,7 +20,7 @@ const SEO = ({
   structuredData
 }) => {
   const router = useRouter();
-  const baseUrl = 'https://norrskensleder.github.io';
+  const baseUrl = 'https://norrskensleder.com';
   const fullUrl = canonical || `${baseUrl}${router.asPath}`;
   const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
@@ -92,14 +92,14 @@ const SEO = ({
       <meta name="author" content={author} />
       <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
       <meta name="googlebot" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
-      
+
       {/* Language and Locale */}
       <meta httpEquiv="content-language" content={lang} />
       <meta name="language" content={lang} />
-      
+
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl} />
-      
+
       {/* Open Graph Meta Tags */}
       <meta property="og:type" content={article ? 'article' : type} />
       <meta property="og:title" content={title} />
@@ -111,7 +111,7 @@ const SEO = ({
       <meta property="og:url" content={fullUrl} />
       <meta property="og:site_name" content="Norrskensleder" />
       <meta property="og:locale" content={lang === 'en' ? 'en_US' : lang} />
-      
+
       {/* Article specific Open Graph tags */}
       {article && (
         <>
@@ -133,30 +133,30 @@ const SEO = ({
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:site" content="@norrskensleder" />
       <meta name="twitter:creator" content="@norrskensleder" />
-      
+
       {/* Additional SEO Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#005cbf" />
       <meta name="msapplication-TileColor" content="#005cbf" />
       <meta name="msapplication-navbutton-color" content="#005cbf" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      
+
       {/* Geo Tags for Nordic content */}
       <meta name="geo.region" content="NO" />
       <meta name="geo.placename" content="Norway" />
       <meta name="ICBM" content="60.472024, 8.468946" />
-      
+
       {/* Website Verification (add when available) */}
       {/* <meta name="google-site-verification" content="your-verification-code" /> */}
       {/* <meta name="msvalidate.01" content="your-bing-verification-code" /> */}
-      
+
       {/* Favicons and Icons */}
       <link rel="icon" href="/norrskensleder/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/norrskensleder/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/norrskensleder/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/norrskensleder/favicon-16x16.png" />
-      <link rel="manifest" href="/norrskensleder/site.webmanifest" />
-      
+      <link rel="manifest" href="/site.webmanifest" />
+
       {/* Structured Data (JSON-LD) */}
       <script
         type="application/ld+json"
@@ -164,26 +164,26 @@ const SEO = ({
           __html: JSON.stringify(finalStructuredData)
         }}
       />
-      
+
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://firestore.googleapis.com" />
-      
+
       {/* DNS Prefetch for better performance */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//firestore.googleapis.com" />
       <link rel="dns-prefetch" href="//github.com" />
-      
+
       {/* Alternative formats and feeds */}
       <link rel="alternate" type="application/rss+xml" title="Norrskensleder RSS Feed" href="/feed.xml" />
       <link rel="alternate" type="application/atom+xml" title="Norrskensleder Atom Feed" href="/atom.xml" />
-      
+
       {/* Copyright and license information */}
       <meta name="copyright" content={`© ${new Date().getFullYear()} Norrskensleder`} />
       <meta name="rating" content="General" />
       <meta name="distribution" content="Global" />
-      
+
       {/* Social Media Profile Links */}
       <link rel="me" href="https://github.com/norrskensleder" />
     </Head>
@@ -192,8 +192,8 @@ const SEO = ({
 
 // Helper function to generate article SEO props
 export const generateArticleSEO = (post) => {
-  const baseUrl = 'https://norrskensleder.github.io';
-  
+  const baseUrl = 'https://norrskensleder.com';
+
   return {
     title: `${post.title} | Norrskensleder`,
     description: post.excerpt || post.content?.slice(0, 160) || 'Read more about this adventure in Northern Europe.',
