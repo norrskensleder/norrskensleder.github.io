@@ -1,6 +1,26 @@
 import { useEffect, useState } from "react";
 import { db } from "../lib/firebase";
 import { doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
+import {
+  Box,
+  Button,
+  Typography,
+  Paper,
+  Alert,
+  CircularProgress,
+  Fade,
+  Chip,
+  ButtonGroup,
+  Skeleton
+} from '@mui/material';
+import {
+  ThumbUp,
+  ThumbDown,
+  ThumbUpOutlined,
+  ThumbDownOutlined,
+  Error as ErrorIcon,
+  CheckCircle
+} from '@mui/icons-material';
 
 function getTodayKey(slug) {
   const today = new Date().toISOString().slice(0, 10);
@@ -25,14 +45,14 @@ export default function LikeDislike({ slug }) {
         setError(null);
       } catch (err) {
         console.error('Error fetching like counts:', err);
-        setError('Failed to load like counts');
+        setError('Failed to load reactions');
       } finally {
         setLoading(false);
       }
     }
-    
+
     fetchCounts();
-    
+
     // Check if user has voted today (with error handling for localStorage)
     try {
       setVoted(!!localStorage.getItem(getTodayKey(slug)));
@@ -44,24 +64,24 @@ export default function LikeDislike({ slug }) {
 
   async function handleVote(type) {
     if (voted || voting) return;
-    
+
     setVoting(true);
     setError(null);
-    
+
     try {
       const ref = doc(db, "likes", slug);
       await setDoc(ref, { like: 0, dislike: 0 }, { merge: true });
       await updateDoc(ref, { [type]: increment(1) });
       const snap = await getDoc(ref);
       setCounts(snap.data());
-      
+
       // Save vote to localStorage with error handling
       try {
         localStorage.setItem(getTodayKey(slug), "1");
       } catch (err) {
         console.warn('Cannot save to localStorage:', err);
       }
-      
+
       setVoted(true);
     } catch (err) {
       console.error('Error voting:', err);
@@ -72,86 +92,148 @@ export default function LikeDislike({ slug }) {
   }
 
   if (loading) return (
-    <div style={{ margin: "2em 0", textAlign: "center" }}>
-      <div>Loading reactions...</div>
-    </div>
+    <Box sx={{ my: 4, textAlign: 'center' }}>
+      <Paper sx={{ p: 3, borderRadius: 3, maxWidth: 400, mx: 'auto' }}>
+        <Skeleton variant="text" width="40%" height={24} sx={{ mx: 'auto', mb: 2 }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+          <Skeleton variant="rectangular" width={100} height={40} sx={{ borderRadius: 2 }} />
+          <Skeleton variant="rectangular" width={100} height={40} sx={{ borderRadius: 2 }} />
+        </Box>
+      </Paper>
+    </Box>
   );
 
   return (
-    <div style={{ margin: "2em 0", textAlign: "center" }}>
-      {/* Error Message */}
-      {error && (
-        <div style={{ 
-          padding: '8px 12px', 
-          marginBottom: '12px', 
-          backgroundColor: '#ffebee', 
-          color: '#c62828', 
-          borderRadius: '4px',
-          border: '1px solid #ef5350',
-          fontSize: '14px'
-        }}>
-          {error}
-        </div>
-      )}
-      
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-        <button 
-          onClick={() => handleVote("like")} 
-          disabled={voted || voting}
-          style={{
-            padding: '8px 16px',
-            border: 'none',
-            borderRadius: '20px',
-            backgroundColor: voted ? '#e0e0e0' : voting ? '#f0f0f0' : '#e8f5e8',
-            color: voted ? '#666' : voting ? '#999' : '#2e7d32',
-            cursor: (voted || voting) ? 'not-allowed' : 'pointer',
-            fontSize: '16px',
-            transition: 'all 0.2s',
-            opacity: voting ? 0.6 : 1
+    <Box sx={{ my: 4, textAlign: 'center' }}>
+      <Paper
+        elevation={3}
+        sx={{
+          p: 3,
+          borderRadius: 3,
+          maxWidth: 400,
+          mx: 'auto',
+          backgroundColor: 'background.paper',
+          border: '1px solid',
+          borderColor: 'divider'
+        }}
+      >
+        <Typography variant="h6" gutterBottom sx={{ mb: 2, color: 'text.primary' }}>
+          Was this helpful?
+        </Typography>
+
+        {/* Error Message */}
+        {error && (
+          <Fade in={!!error}>
+            <Alert
+              severity="error"
+              icon={<ErrorIcon />}
+              sx={{ mb: 2 }}
+              onClose={() => setError(null)}
+            >
+              {error}
+            </Alert>
+          </Fade>
+        )}
+
+        {/* Voting Buttons */}
+        <ButtonGroup
+          variant="contained"
+          size="large"
+          sx={{
+            mb: 2,
+            boxShadow: 'none',
+            '& .MuiButton-root': {
+              borderRadius: '24px',
+              px: 3,
+              py: 1.5,
+              minWidth: 120,
+              fontWeight: 'bold'
+            },
+            '& .MuiButton-root:first-of-type': {
+              borderTopRightRadius: 0,
+              borderBottomRightRadius: 0,
+              borderRight: '1px solid rgba(255,255,255,0.3)'
+            },
+            '& .MuiButton-root:last-of-type': {
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0
+            }
           }}
         >
-          👍 {counts.like} {voting && '...'}
-        </button>
-        
-        <button 
-          onClick={() => handleVote("dislike")} 
-          disabled={voted || voting}
-          style={{
-            padding: '8px 16px',
-            border: 'none',
-            borderRadius: '20px',
-            backgroundColor: voted ? '#e0e0e0' : voting ? '#f0f0f0' : '#ffebee',
-            color: voted ? '#666' : voting ? '#999' : '#c62828',
-            cursor: (voted || voting) ? 'not-allowed' : 'pointer',
-            fontSize: '16px',
-            transition: 'all 0.2s',
-            opacity: voting ? 0.6 : 1
-          }}
-        >
-          👎 {counts.dislike} {voting && '...'}
-        </button>
-      </div>
-      
-      {voted && (
-        <div style={{ 
-          marginTop: 12, 
-          color: '#666',
-          fontSize: '14px',
-          fontStyle: 'italic'
-        }}>
-          Thanks for your feedback! You can vote again tomorrow.
-        </div>
-      )}
-      
-      {voting && (
-        <div style={{ 
-          marginTop: 8, 
-          color: '#005cbf',
-          fontSize: '14px'
-        }}>
-          Recording your vote...
-        </div>
-      )}
-    </div>
+          <Button
+            onClick={() => handleVote("like")}
+            disabled={voted || voting}
+            startIcon={voting ? <CircularProgress size={20} color="inherit" /> :
+                     voted ? <ThumbUp /> : <ThumbUpOutlined />}
+            sx={{
+              backgroundColor: voted ? 'success.light' : 'success.main',
+              color: 'success.contrastText',
+              '&:hover': {
+                backgroundColor: voted ? 'success.light' : 'success.dark'
+              },
+              '&:disabled': {
+                backgroundColor: voted ? 'success.light' : 'action.disabledBackground',
+                color: voted ? 'success.contrastText' : 'action.disabled'
+              }
+            }}
+          >
+            {counts.like || 0}
+          </Button>
+
+          <Button
+            onClick={() => handleVote("dislike")}
+            disabled={voted || voting}
+            startIcon={voting ? <CircularProgress size={20} color="inherit" /> :
+                     voted ? <ThumbDown /> : <ThumbDownOutlined />}
+            sx={{
+              backgroundColor: voted ? 'error.light' : 'error.main',
+              color: 'error.contrastText',
+              '&:hover': {
+                backgroundColor: voted ? 'error.light' : 'error.dark'
+              },
+              '&:disabled': {
+                backgroundColor: voted ? 'error.light' : 'action.disabledBackground',
+                color: voted ? 'error.contrastText' : 'action.disabled'
+              }
+            }}
+          >
+            {counts.dislike || 0}
+          </Button>
+        </ButtonGroup>
+
+        {/* Status Messages */}
+        {voted && (
+          <Fade in={voted}>
+            <Box>
+              <Chip
+                icon={<CheckCircle />}
+                label="Thanks for your feedback!"
+                color="primary"
+                variant="outlined"
+                sx={{ mb: 1 }}
+              />
+              <Typography variant="body2" color="text.secondary">
+                You can vote again tomorrow
+              </Typography>
+            </Box>
+          </Fade>
+        )}
+
+        {voting && !voted && (
+          <Typography variant="body2" color="primary.main" sx={{ fontStyle: 'italic' }}>
+            Recording your feedback...
+          </Typography>
+        )}
+
+        {/* Vote Count Summary */}
+        {(counts.like > 0 || counts.dislike > 0) && (
+          <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+            <Typography variant="caption" color="text.secondary">
+              {counts.like + counts.dislike} total votes
+            </Typography>
+          </Box>
+        )}
+      </Paper>
+    </Box>
   );
 }
