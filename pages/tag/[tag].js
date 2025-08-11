@@ -2,7 +2,7 @@ import { Container, Typography, Box } from '@mui/material';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { getSortedPostsData } from '../../lib/posts';
-import ArticleCard from '../../components/ArticleCard';
+import ArticleCardHorizontal from '../../components/ArticleCardHorizontal';
 
 export default function TagPage({ tag, posts }) {
   return (
@@ -12,7 +12,7 @@ export default function TagPage({ tag, posts }) {
         <Typography variant="h4" gutterBottom>Articles tagged: {tag}</Typography>
         {posts.length === 0 && <Typography>No articles found for this tag.</Typography>}
         {posts.map((post) => (
-          <ArticleCard key={post.slug} post={post} />
+          <ArticleCardHorizontal key={post.slug} post={post} />
         ))}
       </Container>
       <Footer />
