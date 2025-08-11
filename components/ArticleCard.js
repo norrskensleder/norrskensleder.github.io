@@ -11,7 +11,13 @@ export default function ArticleCard({ post }) {
         )}
         <CardContent>
           <Typography variant="h6">{post.title}</Typography>
-          <Typography variant="body2" color="text.secondary">{post.date}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </Typography>
           <Typography variant="body2" sx={{ mt: 1 }} noWrap>{post.content?.slice(0, 120)}...</Typography>
         </CardContent>
       </CardActionArea>

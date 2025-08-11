@@ -124,7 +124,13 @@ export default function Home({ posts, topTags }) {
                   <Typography variant="h6" sx={{ fontWeight: 700 }}>
                     {post.title}
                   </Typography>
-                  <Typography variant="body2">{post.date}</Typography>
+                  <Typography variant="body2">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
