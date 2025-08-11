@@ -48,12 +48,23 @@ export default function Post({ post }) {
 
           {/* Article header */}
           <Box component="header" sx={{ mb: 4 }}>
-            <AccessibleHeading level={2} sx={{ mb: 2 }}>
+            <AccessibleHeading level={2} sx={{ mb: 2, fontSize: { xs: '1.5rem', sm: '2rem', md: '3.5rem' }, wordBreak: 'break-word' }}>
               {post.title}
             </AccessibleHeading>
 
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 2, justifyContent: 'space-between' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Box sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: 2,
+              mb: 2,
+              justifyContent: 'space-between',
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: 0,
+              overflow: 'hidden'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap', minWidth: 0, maxWidth: '100%' }}>
                 <Typography
                   variant="subtitle2"
                   color="text.secondary"
@@ -75,7 +86,7 @@ export default function Post({ post }) {
               </Box>
 
               {/* Social share icons */}
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: 'auto' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: 'auto', flexWrap: 'wrap', minWidth: 0, maxWidth: '100%' }}>
                 <IconButton
                   component="a"
                   href={`https://twitter.com/intent/tweet?url=${encodeURIComponent('https://norrskensleder.com/' + post.slug)}&text=${encodeURIComponent(post.title)}`}
@@ -140,15 +151,18 @@ export default function Post({ post }) {
 
           {/* Cover image with proper accessibility */}
           {post.coverImage && (
-            <figure style={{ margin: '24px 0', textAlign: 'center' }}>
+            <figure style={{ margin: '24px 0', textAlign: 'center', maxWidth: '100%', overflow: 'auto' }}>
               <img
                 src={post.coverImage}
                 alt={post.imageAlt || `Cover image for "${post.title}"`}
                 style={{
                   maxWidth: '100%',
+                  width: '100%',
                   height: 'auto',
                   borderRadius: 8,
-                  boxShadow: '0 2px 16px #00336622'
+                  boxShadow: '0 2px 16px #00336622',
+                  display: 'block',
+                  minWidth: 0
                 }}
                 loading="lazy"
               />
@@ -190,7 +204,7 @@ export default function Post({ post }) {
           {/* Article content */}
           <Box
             component="article"
-            sx={{ mt: 3, mb: 4 }}
+            sx={{ mt: 3, mb: 4, width: '100%', maxWidth: '100%', overflowX: 'auto', minWidth: 0 }}
             aria-label="Article content"
           >
             <MarkdownWithGallery content={post.content} />
@@ -294,7 +308,7 @@ function MarkdownWithGallery({ content }) {
     <img
       src={src}
       alt={alt}
-      style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0' }}
+      style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0', minWidth: 0 }}
     />
   );
 
