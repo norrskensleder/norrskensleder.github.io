@@ -1,5 +1,5 @@
 // Enhanced dynamic blog article page with SEO and accessibility
-import { Container, Typography, Box, Chip, Breadcrumbs } from '@mui/material';
+import { Container, Typography, Box, Chip, Breadcrumbs, IconButton } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getPostData, getSortedPostsData } from '../lib/posts';
@@ -11,7 +11,7 @@ import LikeDislike from '../components/LikeDislike';
 import CommentBox from '../components/CommentBox';
 import SEO, { generateArticleSEO } from '../components/SEO';
 import { AccessibleHeading, Landmark } from '../components/Accessibility';
-import { Home, Tag } from '@mui/icons-material';
+import { Home, Tag, Share as ShareIcon, Facebook, Twitter, LinkedIn } from '@mui/icons-material';
 import Link from 'next/link';
 
 export default function Post({ post }) {
@@ -48,29 +48,85 @@ export default function Post({ post }) {
 
           {/* Article header */}
           <Box component="header" sx={{ mb: 4 }}>
-            <AccessibleHeading level={1} sx={{ mb: 2 }}>
+            <AccessibleHeading level={2} sx={{ mb: 2, fontSize: { xs: '1.5rem', sm: '2rem', md: '3.5rem' }, wordBreak: 'break-word' }}>
               {post.title}
             </AccessibleHeading>
 
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 2 }}>
-              <Typography
-                variant="subtitle2"
-                color="text.secondary"
-                component="time"
-                dateTime={post.date}
-              >
-                Published: {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </Typography>
-
-              {post.readingTime && (
-                <Typography variant="subtitle2" color="text.secondary">
-                  • {post.readingTime} min read
+            <Box sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: 2,
+              mb: 2,
+              justifyContent: 'space-between',
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: 0,
+              overflow: 'hidden'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap', minWidth: 0, maxWidth: '100%' }}>
+                <Typography
+                  variant="subtitle2"
+                  color="text.secondary"
+                  component="time"
+                  dateTime={post.date}
+                >
+                  Published: {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
                 </Typography>
-              )}
+
+                {post.readingTime && (
+                  <Typography variant="subtitle2" color="text.secondary">
+                    • {post.readingTime} min read
+                  </Typography>
+                )}
+              </Box>
+
+              {/* Social share icons */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: 'auto', flexWrap: 'wrap', minWidth: 0, maxWidth: '100%' }}>
+                <IconButton
+                  component="a"
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent('https://norrskensleder.com/' + post.slug)}&text=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                  aria-label="Share on Twitter"
+                  sx={{
+                    '&:hover svg': { color: '#005cbf' }
+                  }}
+                >
+                  <Twitter fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://norrskensleder.com/' + post.slug)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                  aria-label="Share on Facebook"
+                  sx={{
+                    '&:hover svg': { color: '#005cbf' }
+                  }}
+                >
+                  <Facebook fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent('https://norrskensleder.com/' + post.slug)}&title=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                  aria-label="Share on LinkedIn"
+                  sx={{
+                    '&:hover svg': { color: '#005cbf' }
+                  }}
+                >
+                  <LinkedIn fontSize="small" />
+                </IconButton>
+              </Box>
             </Box>
 
             {/* Tags */}
@@ -95,15 +151,18 @@ export default function Post({ post }) {
 
           {/* Cover image with proper accessibility */}
           {post.coverImage && (
-            <figure style={{ margin: '24px 0', textAlign: 'center' }}>
+            <figure style={{ margin: '24px 0', textAlign: 'center', maxWidth: '100%', overflow: 'auto' }}>
               <img
                 src={post.coverImage}
                 alt={post.imageAlt || `Cover image for "${post.title}"`}
                 style={{
                   maxWidth: '100%',
+                  width: '100%',
                   height: 'auto',
                   borderRadius: 8,
-                  boxShadow: '0 2px 16px #00336622'
+                  boxShadow: '0 2px 16px #00336622',
+                  display: 'block',
+                  minWidth: 0
                 }}
                 loading="lazy"
               />
@@ -145,7 +204,7 @@ export default function Post({ post }) {
           {/* Article content */}
           <Box
             component="article"
-            sx={{ mt: 3, mb: 4 }}
+            sx={{ mt: 3, mb: 4, width: '100%', maxWidth: '100%', overflowX: 'auto', minWidth: 0 }}
             aria-label="Article content"
           >
             <MarkdownWithGallery content={post.content} />
@@ -249,7 +308,7 @@ function MarkdownWithGallery({ content }) {
     <img
       src={src}
       alt={alt}
-      style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0' }}
+      style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0', minWidth: 0 }}
     />
   );
 
