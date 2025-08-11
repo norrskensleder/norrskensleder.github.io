@@ -43,10 +43,30 @@ export default function Home({ posts, topTags }) {
         mb: 4,
         position: 'relative',
       }}>
-        <Typography variant="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '0 2px 16px #00336699' }}>
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 700,
+            mb: 2,
+            textShadow: '0 2px 16px #00336699',
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
+            wordBreak: 'break-word',
+            lineHeight: 1.15
+          }}
+        >
           Norrskensleder
         </Typography>
-        <Typography variant="h5" sx={{ maxWidth: 600, mx: 'auto', textShadow: '0 2px 8px #00336699' }}>
+        <Typography
+          variant="h5"
+          sx={{
+            maxWidth: 600,
+            mx: 'auto',
+            textShadow: '0 2px 8px #00336699',
+            fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' },
+            wordBreak: 'break-word',
+            lineHeight: 1.3
+          }}
+        >
           Adventures, tech, and stories from a South Asian in Northern Europe.
         </Typography>
       </Box>
