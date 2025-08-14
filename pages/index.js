@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts, topTags }) {
   // Pick top 3 featured articles (most recent)
-  const featured = posts.slice(0, 3);
+  const featured = posts.slice(0, 4);
   return (
     <>
       <Navbar />
