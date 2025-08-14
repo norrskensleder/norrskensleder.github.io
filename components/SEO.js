@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const SEO = ({
   title = 'Norrskensleder - Adventures in Northern Europe',
   description = 'Adventures, tech, and stories from a South Asian exploring Northern Europe. Discover Norway, Scandinavia, and Nordic culture through travel experiences and drone photography.',
-  keywords = 'Norway, Scandinavia, travel, adventure, Northern Europe, drone photography, Nordic culture, South Asian, blog, experiences',
+  keywords = 'Sweden, Norway, Scandinavia, travel, adventure, Northern Europe, drone photography, Nordic culture, South Asian, blog, experiences, lifestyle, technology',
   author = 'Norrskensleder',
   image = '/norrskensleder/banner.jpg',
   article = false,
@@ -22,7 +22,7 @@ const SEO = ({
   const router = useRouter();
   const baseUrl = 'https://norrskensleder.com';
   const fullUrl = canonical || `${baseUrl}${router.asPath}`;
-  const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
+  const fullImageUrl = image && image !== '/norrskensleder/banner.jpg' ? (image.startsWith('http') ? image : `${baseUrl}${image}`) : `${baseUrl}/norrskensleder/banner.jpg`;
 
   // Default structured data for the website
   const defaultStructuredData = {
