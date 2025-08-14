@@ -6,6 +6,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import { LoadingProvider } from '../components/GlobalLoading';
 import { SkipToMain } from '../components/Accessibility';
 import SEO from '../components/SEO';
+import { useRouter } from 'next/router';
 
 const theme = createTheme({
   palette: {
@@ -86,14 +87,17 @@ const theme = createTheme({
 });
 
 export default function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  // Only show default SEO if not an article page
+  const isArticlePage = router.pathname === '/[slug]';
   return (
     <ErrorBoundary>
       <LoadingProvider>
-        <SEO />
+        {!isArticlePage && <SEO />}
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <SkipToMain />
-          
+
           {/* Accessibility styles */}
           <style jsx global>{`
             /* Focus styles for accessibility */
@@ -101,7 +105,7 @@ export default function MyApp({ Component, pageProps }) {
               outline: 2px solid #005cbf;
               outline-offset: 2px;
             }
-            
+
             /* Reduced motion preferences */
             @media (prefers-reduced-motion: reduce) {
               *, *::before, *::after {
@@ -110,26 +114,26 @@ export default function MyApp({ Component, pageProps }) {
                 transition-duration: 0.01ms !important;
               }
             }
-            
+
             /* High contrast mode support */
             @media (prefers-contrast: high) {
               .MuiButton-root {
                 border: 2px solid currentColor;
               }
             }
-            
+
             /* Print styles */
             @media print {
               .no-print {
                 display: none !important;
               }
-              
+
               body {
                 background: white !important;
                 color: black !important;
               }
             }
-            
+
             /* Screen reader only utility class */
             .sr-only {
               position: absolute;
@@ -142,7 +146,7 @@ export default function MyApp({ Component, pageProps }) {
               white-space: nowrap;
               border: 0;
             }
-            
+
             /* Skip to main content styles */
             .skip-to-main {
               position: absolute;
@@ -156,12 +160,12 @@ export default function MyApp({ Component, pageProps }) {
               z-index: 9999;
               transition: top 0.3s ease;
             }
-            
+
             .skip-to-main:focus {
               top: 8px;
             }
           `}</style>
-          
+
           <Component {...pageProps} />
         </ThemeProvider>
       </LoadingProvider>
