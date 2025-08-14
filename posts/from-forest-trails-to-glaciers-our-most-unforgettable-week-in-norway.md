@@ -1,6 +1,6 @@
 ---
 title: "From Forest Trails to Glaciers: Our Most Unforgettable Week in Norway"
-date: "August 6, 2025"
+date: "2025-08-06"
 tags: ["scandinavia", "itinerary", "travel"]
 coverImage: "/images/norway2025/1.jpg"
 ---
