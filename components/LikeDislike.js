@@ -64,24 +64,26 @@ export default function LikeDislike({ slug }) {
 
   async function handleVote(type) {
     if (voted || voting) return;
-
+    if (!db) {
+      setError('Voting is currently unavailable. Please try again later.');
+      return;
+    }
     setVoting(true);
     setError(null);
-
     try {
       const ref = doc(db, "likes", slug);
-      await setDoc(ref, { like: 0, dislike: 0 }, { merge: true });
-      await updateDoc(ref, { [type]: increment(1) });
       const snap = await getDoc(ref);
-      setCounts(snap.data());
-
-      // Save vote to localStorage with error handling
+      if (!snap.exists()) {
+        await setDoc(ref, { like: 0, dislike: 0 });
+      }
+      await updateDoc(ref, { [type]: increment(1) });
+      const updatedSnap = await getDoc(ref);
+      setCounts(updatedSnap.data());
       try {
         localStorage.setItem(getTodayKey(slug), "1");
       } catch (err) {
         console.warn('Cannot save to localStorage:', err);
       }
-
       setVoted(true);
     } catch (err) {
       console.error('Error voting:', err);
