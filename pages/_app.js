@@ -7,6 +7,8 @@ import { LoadingProvider } from '../components/GlobalLoading';
 import { SkipToMain } from '../components/Accessibility';
 import SEO from '../components/SEO';
 import { useRouter } from 'next/router';
+import CookieConsent, { getCookieConsent } from '../components/CookieConsent';
+import ScriptLoader from '../components/ScriptLoader';
 
 const theme = createTheme({
   palette: {
@@ -88,8 +90,8 @@ const theme = createTheme({
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  // Only show default SEO if not an article page
   const isArticlePage = router.pathname === '/[slug]';
+  const consent = getCookieConsent();
   return (
     <ErrorBoundary>
       <LoadingProvider>
@@ -97,6 +99,8 @@ export default function MyApp({ Component, pageProps }) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <SkipToMain />
+          <CookieConsent />
+          {consent === 'accepted' && <ScriptLoader />}
 
           {/* Accessibility styles */}
           <style jsx global>{`
