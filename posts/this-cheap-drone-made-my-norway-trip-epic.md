@@ -1,6 +1,6 @@
 ---
 title: "This Cheap Drone Made My Norway Trip Epic"
-date: "2023-06-01"
+date: "2025-08-01"
 tags: ["travel", "tech", "norway", "drone"]
 coverImage: "/images/drone/dji_fly_20250723_205706_101_1753297038727_photo_optimized-1024x576.jpeg"
 ---
