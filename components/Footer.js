@@ -4,18 +4,14 @@ import {
   GitHub,
   Email,
   Favorite,
-  Article as BlogIcon
+  Article as BlogIcon,
+  Facebook,
+  YouTube,
+  Instagram
 } from '@mui/icons-material';
-import { resetCookieConsent } from './CookieConsent';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  function handleResetConsent(e) {
-    e.preventDefault();
-    resetCookieConsent();
-    window.location.reload();
-  }
 
   return (
     <Box
@@ -45,8 +41,7 @@ export default function Footer() {
             color="text.secondary"
             sx={{ mb: 3, maxWidth: 500, mx: 'auto', lineHeight: 1.6 }}
           >
-            Adventures, tech, and stories from a South Asian exploring Northern Europe.
-            Sharing experiences of Nordic culture, drone photography, and travel discoveries.
+            At Norrskensleder, we explore Northern Europe and the wider continent, uncovering breathtaking landscapes, rich cultures, and forward-looking innovations. Blending travel and technology, our stories and discoveries invite you to experience Europe in all its beauty, diversity, and creativity.
           </Typography>
 
           {/* Social Links */}
@@ -61,6 +56,8 @@ export default function Footer() {
                     transform: 'translateY(-2px)'
                   }
                 }}
+                component="a"
+                href="/blog"
               >
                 <BlogIcon />
               </IconButton>
@@ -75,11 +72,13 @@ export default function Footer() {
                     transform: 'translateY(-2px)'
                   }
                 }}
+                component="a"
+                href="/contact"
               >
                 <Email />
               </IconButton>
             </Tooltip>
-            <Tooltip title="GitHub">
+            <Tooltip title="Facebook">
               <IconButton
                 color="primary"
                 sx={{
@@ -89,8 +88,48 @@ export default function Footer() {
                     transform: 'translateY(-2px)'
                   }
                 }}
+                component="a"
+                href="https://www.facebook.com/profile.php?id=61556531231306"
+                target="_blank"
+                rel="noopener"
               >
-                <GitHub />
+                <Facebook />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="YouTube">
+              <IconButton
+                color="primary"
+                sx={{
+                  mx: 1,
+                  '&:hover': {
+                    backgroundColor: 'primary.lighter',
+                    transform: 'translateY(-2px)'
+                  }
+                }}
+                component="a"
+                href="https://www.youtube.com/@Norrskensleder"
+                target="_blank"
+                rel="noopener"
+              >
+                <YouTube />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Instagram">
+              <IconButton
+                color="primary"
+                sx={{
+                  mx: 1,
+                  '&:hover': {
+                    backgroundColor: 'primary.lighter',
+                    transform: 'translateY(-2px)'
+                  }
+                }}
+                component="a"
+                href="https://www.instagram.com/norrskensleder/"
+                target="_blank"
+                rel="noopener"
+              >
+                <Instagram />
               </IconButton>
             </Tooltip>
           </Box>
@@ -117,9 +156,13 @@ export default function Footer() {
 
           {/* Cookie and Privacy Policy Links */}
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            <MuiLink href="/privacy-policy" target="_blank" rel="noopener" underline="hover">Privacy Policy</MuiLink>
-            &nbsp;|&nbsp;
-            <MuiLink href="#" onClick={handleResetConsent} underline="hover">Change Cookie Settings</MuiLink>
+            <a
+              href="#"
+              onClick={() => window.googlefc?.callbackQueue?.push(window.googlefc?.showRevocationMessage)}
+              style={{ textDecoration: 'underline', color: '#005cbf' }}
+            >
+              Privacy & Cookie Settings
+            </a>
           </Typography>
 
           {/* Additional Info */}

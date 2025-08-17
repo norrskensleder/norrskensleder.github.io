@@ -13,12 +13,19 @@ import SEO, { generateArticleSEO } from '../components/SEO';
 import { AccessibleHeading, Landmark } from '../components/Accessibility';
 import { Home, Tag, Share as ShareIcon, Facebook, Twitter, LinkedIn } from '@mui/icons-material';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function Post({ post }) {
   const seoProps = generateArticleSEO(post);
 
   return (
     <>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <SEO {...seoProps} image={post.coverImage || '/norrskensleder/banner.jpg'} />
       <Navbar />
 
@@ -30,17 +37,17 @@ export default function Post({ post }) {
             sx={{ mb: 3 }}
             separator="›"
           >
-            <Link href="/" legacyBehavior>
-              <a style={{ display: 'flex', alignItems: 'center', color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
+            <Link href="/">
+              <span style={{ display: 'flex', alignItems: 'center', color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
                 <Home style={{ marginRight: '4px', fontSize: 20 }} />
                 Home
-              </a>
+              </span>
             </Link>
 
-            <Link href="/blog" legacyBehavior>
-              <a style={{ color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
+            <Link href="/blog">
+              <span style={{ color: 'var(--mui-palette-primary-main)', textDecoration: 'none' }}>
                 Blog
-              </a>
+              </span>
             </Link>
 
             <Typography color="text.primary">{post.title}</Typography>

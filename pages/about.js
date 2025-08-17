@@ -10,7 +10,7 @@ export default function About() {
       <Container maxWidth="sm" sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom>About</Typography>
         <Typography>
-          I am a South Asian living in Northern Europe, sharing my adventures and tech explorations.
+          At Norrskensleder, we explore Northern Europe and the wider continent, uncovering breathtaking landscapes, rich cultures, and forward-looking innovations. Blending travel and technology, our stories and discoveries invite you to experience Europe in all its beauty, diversity, and creativity.
         </Typography>
       </Container>
       <Footer />

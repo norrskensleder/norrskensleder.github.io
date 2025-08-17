@@ -4,6 +4,7 @@ import ArticleCard from '../components/ArticleCard';
 import { Box, Typography, Container, Chip, Grid } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Script from 'next/script';
 
 export async function getStaticProps() {
   const posts = getSortedPostsData();
@@ -27,6 +28,12 @@ export default function Home({ posts, topTags }) {
   const featured = posts.slice(0, 4);
   return (
     <>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <Navbar />
       {/* Hero Section */}
       <Box sx={{
@@ -94,15 +101,13 @@ export default function Home({ posts, topTags }) {
         >
           Featured
         </Typography>
-        <Grid container spacing={4} sx={{ mb: 6 }}>
-          {featured.map(post => (
+        <Grid container columns={12} columnSpacing={4} rowSpacing={4} sx={{ mb: 6 }}>
+          {featured.map((post) => (
             <Grid
-              item
-              xs={12}         // Full width on mobile
-              md={6}          // 50% width on medium+
               key={post.slug}
               sx={{
-                flexGrow: 0,    // prevent stretching beyond 50%
+                gridColumn: { xs: 'span 12', md: 'span 6' },
+                flexGrow: 0,
                 maxWidth: { md: '48%' },
                 flexBasis: { md: '48%' }
               }}
@@ -180,18 +185,15 @@ export default function Home({ posts, topTags }) {
             <Typography variant="h5" gutterBottom>
               {tag.charAt(0).toUpperCase() + tag.slice(1)}
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container columns={12} columnSpacing={2}>
               {posts
                 .filter(post => post.tags?.includes(tag))
                 .slice(0, 3)
                 .map(post => (
                   <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4} // Keep MUI's breakpoint but tweak width
                     key={post.slug}
                     sx={{
+                      gridColumn: { xs: 'span 12', md: 'span 4', lg: 'span 4' },
                       flexBasis: { md: '32%', lg: '32%' },
                       maxWidth: { md: '32%', lg: '32%' }
                     }}
