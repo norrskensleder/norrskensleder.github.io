@@ -9,16 +9,9 @@ import {
   YouTube,
   Instagram
 } from '@mui/icons-material';
-import { resetCookieConsent } from './CookieConsent';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  function handleResetConsent(e) {
-    e.preventDefault();
-    resetCookieConsent();
-    window.location.reload();
-  }
 
   return (
     <Box
@@ -163,9 +156,13 @@ export default function Footer() {
 
           {/* Cookie and Privacy Policy Links */}
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            <MuiLink href="/privacy-policy" target="_blank" rel="noopener" underline="hover">Privacy Policy</MuiLink>
-            &nbsp;|&nbsp;
-            <MuiLink href="#" onClick={handleResetConsent} underline="hover">Change Cookie Settings</MuiLink>
+            <a
+              href="#"
+              onClick={() => window.googlefc?.callbackQueue?.push(window.googlefc?.showRevocationMessage)}
+              style={{ textDecoration: 'underline', color: '#005cbf' }}
+            >
+              Privacy & Cookie Settings
+            </a>
           </Typography>
 
           {/* Additional Info */}

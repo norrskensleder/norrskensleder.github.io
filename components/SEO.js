@@ -1,7 +1,7 @@
 // Comprehensive SEO component with meta tags, Open Graph, and structured data
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { getCookieConsent } from './CookieConsent';
+import Script from 'next/script';
 
 const SEO = ({
   title = 'Norrskensleder - Adventures in Northern Europe',
@@ -83,9 +83,6 @@ const SEO = ({
   } : null;
 
   const finalStructuredData = structuredData || articleStructuredData || defaultStructuredData;
-
-  // Consent status for cookies (e.g., for AdSense)
-  const consent = typeof window !== 'undefined' ? getCookieConsent() : null;
 
   return (
     <Head>
@@ -191,14 +188,13 @@ const SEO = ({
       {/* Social Media Profile Links */}
       <link rel="me" href="https://github.com/norrskensleder" />
 
-      {/* AdSense script: only load if consent is accepted */}
-      {consent === 'accepted' && (
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
-          crossOrigin="anonymous"
-        />
-      )}
+      {/* AdSense script */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
     </Head>
   );
 };

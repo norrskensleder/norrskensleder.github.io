@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { getCookieConsent } from './CookieConsent';
 
 const SCRIPTS = [
   {
@@ -21,18 +20,16 @@ const SCRIPTS = [
 
 export default function ScriptLoader() {
   useEffect(() => {
-    if (getCookieConsent() === 'accepted') {
-      SCRIPTS.forEach(script => {
-        if (!document.getElementById(script.id)) {
-          const s = document.createElement('script');
-          s.id = script.id;
-          s.src = script.src;
-          if (script.async) s.async = true;
-          document.head.appendChild(s);
-          s.onload = script.inject;
-        }
-      });
-    }
+    SCRIPTS.forEach(script => {
+      if (!document.getElementById(script.id)) {
+        const s = document.createElement('script');
+        s.id = script.id;
+        s.src = script.src;
+        if (script.async) s.async = true;
+        document.head.appendChild(s);
+        s.onload = script.inject;
+      }
+    });
   }, []);
   return null;
 }
