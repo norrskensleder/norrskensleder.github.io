@@ -4,6 +4,7 @@ import ArticleCard from '../components/ArticleCard';
 import { Box, Typography, Container, Chip, Grid } from '@mui/material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Script from 'next/script';
 
 export async function getStaticProps() {
   const posts = getSortedPostsData();
@@ -27,6 +28,12 @@ export default function Home({ posts, topTags }) {
   const featured = posts.slice(0, 4);
   return (
     <>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <Navbar />
       {/* Hero Section */}
       <Box sx={{
