@@ -1,7 +1,7 @@
 ---
 title: "The Swedish Museum That Makes Kids Smarter and Adults Amazed"
 date: "2025-08-16"
-tags: ["sweden", "stockholm", "travel", "history"]
+tags: ["sweden", "stockholm", "travel", "culture"]
 coverImage: "/images/nhms/IMG_3971.JPG"
 author: ""
 ---
