@@ -74,7 +74,7 @@ export default function Home({ posts, topTags }) {
             lineHeight: 1.3
           }}
         >
-          Adventures, tech, and stories from a South Asian in Northern Europe.
+          Explore Northern Europe and Beyond ...
         </Typography>
       </Box>
       <Container maxWidth="lg">
