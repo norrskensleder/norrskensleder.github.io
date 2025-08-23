@@ -161,7 +161,12 @@ export default function Home({ posts, topTags }) {
                   }}
                   component="a"
                   href={`/${post.slug}`}
-                />
+                  aria-label={`Read article: ${post.title}`}
+                >
+                  <span style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
+                    {`Read article: ${post.title}`}
+                  </span>
+                </Box>
               </Box>
             </Grid>
           ))}
