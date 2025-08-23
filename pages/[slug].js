@@ -159,6 +159,7 @@ export default function Post({ post }) {
                 alt={post.imageAlt || `Cover image for "${post.title}"`}
                 width={1200}
                 height={630}  // common blog cover size
+                priority
                 style={{
                   maxWidth: '100%',
                   height: 'auto',
