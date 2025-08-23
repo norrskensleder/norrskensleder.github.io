@@ -13,6 +13,7 @@ import SEO, { generateArticleSEO } from '../components/SEO';
 import { AccessibleHeading, Landmark } from '../components/Accessibility';
 import { Home, Tag, Share as ShareIcon, Facebook, Twitter, LinkedIn } from '@mui/icons-material';
 import Link from 'next/link';
+import Image from "next/image";
 import Script from 'next/script';
 
 export default function Post({ post }) {
@@ -20,12 +21,6 @@ export default function Post({ post }) {
 
   return (
     <>
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
       <SEO {...seoProps} image={post.coverImage || '/norrskensleder/banner.jpg'} />
       <Navbar />
 
@@ -159,19 +154,19 @@ export default function Post({ post }) {
           {/* Cover image with proper accessibility */}
           {post.coverImage && (
             <figure style={{ margin: '24px 0', textAlign: 'center', maxWidth: '100%', overflow: 'auto' }}>
-              <img
+              <Image
                 src={post.coverImage}
                 alt={post.imageAlt || `Cover image for "${post.title}"`}
+                width={1200}
+                height={630}  // common blog cover size
                 style={{
                   maxWidth: '100%',
-                  width: '100%',
                   height: 'auto',
                   borderRadius: 8,
                   boxShadow: '0 2px 16px #00336622',
                   display: 'block',
                   minWidth: 0
                 }}
-                loading="lazy"
               />
               {post.imageCaption && (
                 <figcaption style={{
@@ -312,10 +307,19 @@ function MarkdownWithGallery({ content }) {
 
   // Custom image renderer for non-gallery images
   const markdownImg = ({ src, alt }) => (
-    <img
+    <Image
       src={src}
       alt={alt}
-      style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, boxShadow: '0 2px 16px #00336622', margin: '16px 0', minWidth: 0 }}
+      width={800}
+      height={600}
+      style={{
+        maxWidth: '100%',
+        height: 'auto',
+        borderRadius: 8,
+        boxShadow: '0 2px 16px #00336622',
+        margin: '16px 0',
+        minWidth: 0
+      }}
     />
   );
 

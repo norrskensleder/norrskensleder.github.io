@@ -22,6 +22,7 @@ The museum is full of different worlds:
 At one point, my daughter started *teaching me* about fossils and animals. That is the magic of this place – children don’t just watch, they explore and learn, and they do it with joy.
 
 <!--gallery-->
+![Dinosaurs Eggs](/images/nhms/IMG_3976.JPG)
 ![Dinosaurs fossils](/images/nhms/IMG_3947.JPG)
 ![Dinosaurs fossils](/images/nhms/IMG_3949.JPG)
 ![Dinosaurs](/images/nhms/IMG_3974.JPG)
@@ -32,7 +33,6 @@ At one point, my daughter started *teaching me* about fossils and animals. That 
 ![Dinosaurs fossils](/images/nhms/IMG_3987.JPG)
 ![Dinosaurs fossils](/images/nhms/IMG_3989.JPG)
 ![Mammoth fossils](/images/nhms/IMG_3999.JPG)
-![Mammoth fossils](/images/nhms/IMG_4002.JPG)
 ![Pre-Historic Rhinoceroses fossils](/images/nhms/IMG_4005.JPG)
 <!--gallery-->
 
@@ -82,7 +82,7 @@ Here are some things I learned that will make your visit even better:
 ![fossils](/images/nhms/IMG_3943.JPG)
 ![fossils](/images/nhms/IMG_3979.JPG)
 ![fossils](/images/nhms/IMG_3982.JPG)
-![fossils](/images/nhms/IMG_3983.JPG)
+![Naturhistoriska Riksmuseet](/images/nhms/IMG_3909.JPG)
 <!--gallery-->
 
 ## As we finish
@@ -92,7 +92,8 @@ When I left the Naturhistoriska Riksmuseet, I felt like I had traveled through t
 If you are in Stockholm, **don’t miss it**. Whether you are with kids, friends, or even alone, you will come out with new knowledge, fun memories, and maybe even more questions about our amazing world.
 
 <!--gallery-->
-![Naturhistoriska Riksmuseet](/images/nhms/IMG_3909.JPG)
+![Mammoth fossils](/images/nhms/IMG_4002.JPG)
 ![Underwater Life](/images/nhms/IMG_4013.JPG)
-![Dinosaurs Eggs](/images/nhms/IMG_3976.JPG)
+![fossils](/images/nhms/IMG_3983.JPG)
+
 <!--gallery-->

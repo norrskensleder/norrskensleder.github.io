@@ -17,24 +17,24 @@ Once inside, guests step straight into the “vortex” — a curved lobby that 
 We had purchased our tickets online, which meant we could skip the ticket counter. However, Den Blå Planet controls visitor numbers carefully to ensure that each guest has the best possible experience. This meant we waited about half an hour at the entrance before being allowed inside. It was a small inconvenience, but once we stepped in, the wait was well worth it.
 
 <!--gallery-->
-![Nemo is looking at us!](/images/blue_planet/1.jpg)
-![Seahorse](/images/blue_planet/3.jpg)
 ![Alligator gar](/images/blue_planet/6.jpg)
-![Stingray](/images/blue_planet/4.jpg)
+![The big Aquarium](/images/blue_planet/9.jpg)
+![Shark](/images/blue_planet/2.jpg)
+![Bioluminescent corais macios](/images/blue_planet/11.jpg)
 ![Stingray](/images/blue_planet/7.jpg)
 ![Xingu River ray](/images/blue_planet/10.jpg)
+![Nemo is looking at us!](/images/blue_planet/1.jpg)
+![Seahorse](/images/blue_planet/3.jpg)
 ![The Golden Poison Frog](/images/blue_planet/5.jpg)
 ![Tri-colored poison dart frog](/images/blue_planet/8.jpg)
 ![Tri-colored poison dart frog](/images/blue_planet/12.jpg)
-![The big Aquarium](/images/blue_planet/9.jpg)
-![Shark](/images/blue_planet/2.jpg)
 ![Sharks](/images/blue_planet/18.jpg)
-![Bioluminescent corais macios](/images/blue_planet/11.jpg)
 ![Red-bellied piranha](/images/blue_planet/13.jpg)
 ![Dory! Powder blue tang](/images/blue_planet/17.jpg)
-![Chitala chitala](/images/blue_planet/15.jpg)
 ![Multiple Fishes](/images/blue_planet/19.jpg)
+![Stingray](/images/blue_planet/4.jpg)
 ![Mata Mata Turtle](/images/blue_planet/20.jpg)
+![Chitala chitala](/images/blue_planet/15.jpg)
 <!--gallery-->
 
 ## Exploring the Aquarium – A Journey Through the Seas
