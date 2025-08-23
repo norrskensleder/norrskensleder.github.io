@@ -28,12 +28,6 @@ export default function Home({ posts, topTags }) {
   const featured = posts.slice(0, 4);
   return (
     <>
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
       <Navbar />
       {/* Hero Section */}
       <Box sx={{

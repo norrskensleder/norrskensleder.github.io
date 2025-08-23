@@ -5,7 +5,15 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEBL7KXZEB"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CEBL7KXZEB">
+        </script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
+          crossOrigin="anonymous"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `

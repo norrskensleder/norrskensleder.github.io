@@ -187,14 +187,6 @@ const SEO = ({
 
       {/* Social Media Profile Links */}
       <link rel="me" href="https://github.com/norrskensleder" />
-
-      {/* AdSense script */}
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
     </Head>
   );
 };

@@ -20,12 +20,6 @@ export default function Post({ post }) {
 
   return (
     <>
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3305345510108069"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
       <SEO {...seoProps} image={post.coverImage || '/norrskensleder/banner.jpg'} />
       <Navbar />
 
