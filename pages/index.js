@@ -45,7 +45,7 @@ export default function Home({ posts, topTags }) {
         position: 'relative',
       }}>
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             fontWeight: 700,
             mb: 2,
@@ -58,7 +58,7 @@ export default function Home({ posts, topTags }) {
           Norrskensleder
         </Typography>
         <Typography
-          variant="h5"
+          variant="h2"
           sx={{
             maxWidth: 600,
             mx: 'auto',
