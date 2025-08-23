@@ -45,7 +45,7 @@ export default function Home({ posts, topTags }) {
         position: 'relative',
       }}>
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             fontWeight: 700,
             mb: 2,
@@ -58,7 +58,7 @@ export default function Home({ posts, topTags }) {
           Norrskensleder
         </Typography>
         <Typography
-          variant="h5"
+          variant="h2"
           sx={{
             maxWidth: 600,
             mx: 'auto',
@@ -161,7 +161,12 @@ export default function Home({ posts, topTags }) {
                   }}
                   component="a"
                   href={`/${post.slug}`}
-                />
+                  aria-label={`Read article: ${post.title}`}
+                >
+                  <span style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
+                    {`Read article: ${post.title}`}
+                  </span>
+                </Box>
               </Box>
             </Grid>
           ))}
