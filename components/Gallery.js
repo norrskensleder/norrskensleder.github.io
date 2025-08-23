@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from "next/image";
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -19,12 +20,14 @@ export default function Gallery({ images }) {
     }}>
       {images.map((img, i) => (
         <div key={img.src} style={{ width: '100%' }}>
-          <img
+          <Image
             src={img.src}
             alt={img.alt}
+            width={600}       // pick a good default width
+            height={400}      // maintain aspect ratio (3/2)
             style={{
               width: '100%',
-              aspectRatio: '3/2',
+              height: 'auto',
               objectFit: 'cover',
               cursor: 'pointer',
               borderRadius: 8,

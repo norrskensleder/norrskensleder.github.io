@@ -71,8 +71,8 @@ By then, we were too tired for our third planned stop. We headed straight to Les
 <!--gallery-->
 ![Ringebu Stave Church](/images/norway2025/DJI_0019.jpeg)
 ![Myfallet](/images/norway2025/DJI_0029.jpeg)
-![Mya River](/images/norway2025/myfallet.jpeg)
 ![Lesjaskogsvatnet Lake](/images/norway2025/DJI_0030.jpeg)
+![Mya River](/images/norway2025/myfallet.jpeg)
 <!--gallery-->
 
 ## Day 3 – Trollstigen & Geiranger
@@ -88,11 +88,11 @@ By midday, we reached Geiranger. The fjord was glassy blue, framed by cliffs and
 We ended the day at Djupvatnet Lake, high in the mountains. The air was thin and cool, the water so clear it was like looking into another world. The drone footage here is a Chef’s kiss.
 
 <!--gallery-->
-![Trollstigen road](/images/norway2025/trolls_1.jpeg)
-![Trollstigen](/images/norway2025/trolls_2.jpeg)
 ![Geirangerfjord](/images/norway2025/gei_01.jpeg)
 ![Seven Sisters Waterfall](/images/norway2025/gei_02.jpeg)
 ![Geirangerfjord](/images/norway2025/gei_03.jpeg)
+![Trollstigen road](/images/norway2025/trolls_1.jpeg)
+![Trollstigen](/images/norway2025/trolls_2.jpeg)
 <!--gallery-->
 
 ## Day 4 – Sunnfjord: The Lake, The Fish, The Waterfall
@@ -108,9 +108,9 @@ Later, we took the canoe out. Every stroke of the paddle sent ripples across the
 That night, we sat on the balcony with mugs of hot tea, watching the glacier glow under the fading light.
 
 <!--gallery-->
-![Sunnfjord](/images/norway2025/s1.jpeg)
 ![Sunnfjord](/images/norway2025/s2.jpeg)
 ![Sunnfjord](/images/norway2025/s3.jpeg)
+![Sunnfjord](/images/norway2025/s1.jpeg)
 <!--gallery-->
 
 ## Day 5 – Mission: Touch the Glacier
@@ -124,10 +124,10 @@ Finally, the forest opened up into a rocky slope. Above us, the glacier loomed �
 We touched it. Hard, smooth, older than anything I’d ever touched before. My wife stacked some rocks into a little tower — our mark that we’d made it.
 
 <!--gallery-->
+![Mammoths!](/images/norway2025/g4.jpg)
 ![Bøyabreen Glacier](/images/norway2025/g1.jpeg)
 ![Bøyabreen Glacier Viewpoint](/images/norway2025/g2.jpeg)
 ![Bøyabreen Glacier Viewpoint](/images/norway2025/g3.jpeg)
-![Mammoths!](/images/norway2025/g4.jpg)
 <!--gallery-->
 
 ## Day 6 – Fjærland → Flåm

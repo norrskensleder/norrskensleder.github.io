@@ -24,7 +24,7 @@ Abisko is more than a village. It is a place of study, where scientists from aro
 
 <!--gallery-->
 ![Abisko Central Station](/images/winterabisko/IMG_4027.JPG)
-![Abisko](/images/winterabisko/IMG_4029.jpeg)
+![aurora](/images/winterabisko/IMG_2141.jpeg)
 ![Abisko](/images/winterabisko/IMG_4031.jpeg)
 <!--gallery-->
 
@@ -66,7 +66,7 @@ It lasted perhaps twenty minutes, perhaps forever.
 We stood there, strangers bound together by awe, each of us quietly aware that we were inside a memory we would never lose. I had seen the aurora later, from the backyard of our home in southern Sweden, but never like this — in the deep of the Arctic night, with the whole sky breathing above us.
 
 <!--gallery-->
-![aurora](/images/winterabisko/IMG_2141.jpeg)
+![Abisko](/images/winterabisko/IMG_4029.jpeg)
 ![aurora](/images/winterabisko/IMG_2120.jpeg)
 <!--gallery-->
 
