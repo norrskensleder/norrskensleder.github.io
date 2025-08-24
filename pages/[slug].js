@@ -21,7 +21,7 @@ export default function Post({ post }) {
 
   return (
     <>
-      <SEO {...seoProps} image={post.coverImage || '/norrskensleder/banner.jpg'} />
+      <SEO {...seoProps} image={post.coverImage || '/norrskensleder/banner.webp'} />
       <Navbar />
 
       <Landmark role="main" id="main-content" aria-label="Blog post content">
