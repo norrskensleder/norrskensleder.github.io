@@ -14,8 +14,10 @@ An experience blog!
                            │ (direct HTTPS requests from browser)
                            │
 +───────────────+    Static│assets (HTML, JS, CSS, images)   +────────────────+
-|   User        │◀────────▶│      Cloudflare CDN             │   GitHub Pages |
-|   Browser     │          │  (DNS + Cache + SSL)            │ (Static site   |
+|   User        │◀────────▶│  Cloudflare CDN                 │   GitHub Pages |
+|   Browser     │          │   (DNS                          │                |
+|               │          │    + Custom Cache               │                |
+|               │          │    + DDoS/bot )                 │ (Static site   |
 |               │          │                                 │ from Markdown) |
 +───────────────+          +─────────────────────────────────+────────────────+
 ```
