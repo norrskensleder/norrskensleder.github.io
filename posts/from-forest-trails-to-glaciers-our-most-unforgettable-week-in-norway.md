@@ -2,7 +2,7 @@
 title: "From Forest Trails to Glaciers: Our Most Unforgettable Week in Norway"
 date: "2025-08-06"
 tags: ["scandinavia", "itinerary", "travel"]
-coverImage: "/images/norway2025/1.jpg"
+coverImage: "/images/norway2025/1.webp"
 ---
 
 You know that smart idea you have when you’re already tired? That’s how this trip started.
@@ -69,10 +69,10 @@ We couldn’t resist — we waded into the river. The water was cool and sharp, 
 By then, we were too tired for our third planned stop. We headed straight to Lesjaskogsvatnet Camping, a lake so still it reflected the mountains like a mirror. The only sound was the soft slap of water against the shore. That evening, we flew the drone as the sky turned orange, the lake glowing like molten gold.
 
 <!--gallery-->
-![Ringebu Stave Church](/images/norway2025/DJI_0019.jpeg)
-![Myfallet](/images/norway2025/DJI_0029.jpeg)
-![Lesjaskogsvatnet Lake](/images/norway2025/DJI_0030.jpeg)
-![Mya River](/images/norway2025/myfallet.jpeg)
+![Ringebu Stave Church](/images/norway2025/DJI_0019.webp)
+![Myfallet](/images/norway2025/DJI_0029.webp)
+![Lesjaskogsvatnet Lake](/images/norway2025/DJI_0030.webp)
+![Mya River](/images/norway2025/myfallet.webp)
 <!--gallery-->
 
 ## Day 3 – Trollstigen & Geiranger
@@ -88,11 +88,11 @@ By midday, we reached Geiranger. The fjord was glassy blue, framed by cliffs and
 We ended the day at Djupvatnet Lake, high in the mountains. The air was thin and cool, the water so clear it was like looking into another world. The drone footage here is a Chef’s kiss.
 
 <!--gallery-->
-![Geirangerfjord](/images/norway2025/gei_01.jpeg)
-![Seven Sisters Waterfall](/images/norway2025/gei_02.jpeg)
-![Geirangerfjord](/images/norway2025/gei_03.jpeg)
-![Trollstigen road](/images/norway2025/trolls_1.jpeg)
-![Trollstigen](/images/norway2025/trolls_2.jpeg)
+![Geirangerfjord](/images/norway2025/gei_01.webp)
+![Seven Sisters Waterfall](/images/norway2025/gei_02.webp)
+![Geirangerfjord](/images/norway2025/gei_03.webp)
+![Trollstigen road](/images/norway2025/trolls_1.webp)
+![Trollstigen](/images/norway2025/trolls_2.webp)
 <!--gallery-->
 
 ## Day 4 – Sunnfjord: The Lake, The Fish, The Waterfall
@@ -108,9 +108,9 @@ Later, we took the canoe out. Every stroke of the paddle sent ripples across the
 That night, we sat on the balcony with mugs of hot tea, watching the glacier glow under the fading light.
 
 <!--gallery-->
-![Sunnfjord](/images/norway2025/s2.jpeg)
-![Sunnfjord](/images/norway2025/s3.jpeg)
-![Sunnfjord](/images/norway2025/s1.jpeg)
+![Sunnfjord](/images/norway2025/s2.webp)
+![Sunnfjord](/images/norway2025/s3.webp)
+![Sunnfjord](/images/norway2025/s1.webp)
 <!--gallery-->
 
 ## Day 5 – Mission: Touch the Glacier
@@ -124,10 +124,10 @@ Finally, the forest opened up into a rocky slope. Above us, the glacier loomed �
 We touched it. Hard, smooth, older than anything I’d ever touched before. My wife stacked some rocks into a little tower — our mark that we’d made it.
 
 <!--gallery-->
-![Mammoths!](/images/norway2025/g4.jpg)
-![Bøyabreen Glacier](/images/norway2025/g1.jpeg)
-![Bøyabreen Glacier Viewpoint](/images/norway2025/g2.jpeg)
-![Bøyabreen Glacier Viewpoint](/images/norway2025/g3.jpeg)
+![Mammoths!](/images/norway2025/g4.webp)
+![Bøyabreen Glacier](/images/norway2025/g1.webp)
+![Bøyabreen Glacier Viewpoint](/images/norway2025/g2.webp)
+![Bøyabreen Glacier Viewpoint](/images/norway2025/g3.webp)
 <!--gallery-->
 
 ## Day 6 – Fjærland → Flåm
@@ -137,9 +137,9 @@ Flåm was quieter than Geiranger, with the fjord stretching out like a silver ri
 We flew the drone here until the wind picked up, and even the drone seemed to say, “Nope.”
 
 <!--gallery-->
-![Flåm](/images/norway2025/f1.jpeg)
-![Aurlandsfjord](/images/norway2025/f2.jpeg)
-![Stegastein](/images/norway2025/f3.jpeg)
+![Flåm](/images/norway2025/f1.webp)
+![Aurlandsfjord](/images/norway2025/f2.webp)
+![Stegastein](/images/norway2025/f3.webp)
 <!--gallery-->
 
 ## Day 7 – Flåm → Oslo → Sweden
