@@ -2,7 +2,7 @@
 title: "This Cheap Drone Made My Norway Trip Epic"
 date: "2025-08-01"
 tags: ["travel", "tech", "norway", "drone"]
-coverImage: "/images/drone/dji_fly_20250723_205706_101_1753297038727_photo_optimized-1024x576.jpeg"
+coverImage: "/images/drone/dji_fly_20250723_205706_101_1753297038727_photo_optimized-1024x576.webp"
 ---
 
 Just before heading out on our summer road trip in Norway, Amazon started showing me ads for DJI drones — and guess what? The DJI Mini 4K was 50 euros cheaper than usual! A drone, on sale, right before our trip? That sounded like the perfect spice to add to our scenic journey — especially with our 13th marriage anniversary coming up!
@@ -97,7 +97,7 @@ So here’s what I did:
 5. After going through the course materials, I took the **online exam**, which was a simple multiple-choice test.
 6. **Boom**! Passed it, got the license, and I was good to go!
 
-![My Drone License](/images/drone/license.jpeg)
+![My Drone License](/images/drone/license.webp)
 
 Once you have a drone license from any EASA member country, it’s valid across all of Europe (within the EASA zone). That means my Norwegian license lets me fly in countries like France, Spain, Germany, and others — as long as I follow their local laws and restrictions. Pretty convenient!
 
@@ -112,12 +112,12 @@ https://www.youtube.com/watch?v=kLCW1NC5A0E
 ## Some Drone Shots from the Trip
 
 <!--gallery-->
-![360 view of a place in Gothenburg](/images/drone/dji_fly_20250719_161840_7_1752935216475_pano_optimized-1024x512.jpeg)
-![Lake Alnesvatnet](/images/drone/dji_fly_20250721_110344_37_1753088819359_photo_optimized-1024x576.jpeg)
-![Trollstigen Viewpoint](/images/drone/dji_fly_20250721_110720_43_1753088872924_photo_optimized-1024x576.jpeg)
-![Fjærlandsfjorden](/images/drone/dji_fly_20250723_205706_101_1753297038727_photo_optimized-1024x576.jpeg)
-![Stegastein](/images/drone/dji_fly_20250724_164808_115_1753368576136_photo_optimized-1024x576.jpeg)
-![Aurlandsfjord](/images/drone/dji_fly_20250724_164956_119_1753368638202_photo_optimized-1024x576.jpeg)
+![360 view of a place in Gothenburg](/images/drone/dji_fly_20250719_161840_7_1752935216475_pano_optimized-1024x512.webp)
+![Lake Alnesvatnet](/images/drone/dji_fly_20250721_110344_37_1753088819359_photo_optimized-1024x576.webp)
+![Trollstigen Viewpoint](/images/drone/dji_fly_20250721_110720_43_1753088872924_photo_optimized-1024x576.webp)
+![Fjærlandsfjorden](/images/drone/dji_fly_20250723_205706_101_1753297038727_photo_optimized-1024x576.webp)
+![Stegastein](/images/drone/dji_fly_20250724_164808_115_1753368576136_photo_optimized-1024x576.webp)
+![Aurlandsfjord](/images/drone/dji_fly_20250724_164956_119_1753368638202_photo_optimized-1024x576.webp)
 <!--gallery-->
 
 From panicking over crashing a drone, to passing my license test and filming Norway’s epic landscapes — it’s been a wild ride. If you’re planning to get a drone and fly it in Europe, here’s my checklist:

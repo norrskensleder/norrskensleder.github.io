@@ -8,7 +8,7 @@ const SEO = ({
   description = 'Adventures, tech, and stories from a South Asian exploring Northern Europe. Discover Norway, Scandinavia, and Nordic culture through travel experiences and drone photography.',
   keywords = 'Sweden, Norway, Scandinavia, travel, adventure, Northern Europe, drone photography, Nordic culture, South Asian, blog, experiences, lifestyle, technology',
   author = 'Norrskensleder',
-  image = '/norrskensleder/banner.jpg',
+  image = '/norrskensleder/banner.webp',
   article = false,
   publishedTime,
   modifiedTime,
@@ -23,7 +23,7 @@ const SEO = ({
   const router = useRouter();
   const baseUrl = 'https://norrskensleder.com';
   const fullUrl = canonical || `${baseUrl}${router.asPath}`;
-  const fullImageUrl = image && image !== '/norrskensleder/banner.jpg' ? (image.startsWith('http') ? image : `${baseUrl}${image}`) : `${baseUrl}/norrskensleder/banner.jpg`;
+  const fullImageUrl = image && image !== '/norrskensleder/banner.webp' ? (image.startsWith('http') ? image : `${baseUrl}${image}`) : `${baseUrl}/norrskensleder/banner.webp`;
 
   // Default structured data for the website
   const defaultStructuredData = {
@@ -199,7 +199,7 @@ export const generateArticleSEO = (post) => {
     title: `${post.title} | Norrskensleder`,
     description: post.excerpt || post.content?.slice(0, 160) || 'Read more about this adventure in Northern Europe.',
     keywords: post.tags?.join(', ') || 'Norway, travel, adventure',
-    image: post.coverImage || '/norrskensleder/banner.jpg',
+    image: post.coverImage || '/norrskensleder/banner.webp',
     article: true,
     publishedTime: post.date ? new Date(post.date).toISOString() : undefined,
     modifiedTime: post.modifiedDate ? new Date(post.modifiedDate).toISOString() : undefined,
@@ -212,7 +212,7 @@ export const generateArticleSEO = (post) => {
       description: post.excerpt || post.content?.slice(0, 160),
       image: {
         '@type': 'ImageObject',
-        url: post.coverImage ? `${baseUrl}${post.coverImage}` : `${baseUrl}/norrskensleder/banner.jpg`,
+        url: post.coverImage ? `${baseUrl}${post.coverImage}` : `${baseUrl}/norrskensleder/banner.webp`,
         width: 1200,
         height: 630
       },

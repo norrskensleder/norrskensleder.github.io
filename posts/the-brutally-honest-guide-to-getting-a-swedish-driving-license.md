@@ -2,7 +2,7 @@
 title: "The Brutally Honest Guide to Getting a Swedish Driving License (Without Going Broke or Losing Your Mind)"
 date: "2025-08-14"
 tags: ["sweden", "driving", "life", "tips"]
-coverImage: "/images/driving_license/4q8l084q8l084q8l.jpg"
+coverImage: "/images/driving_license/4q8l084q8l084q8l.webp"
 author: ""
 ---
 
@@ -106,7 +106,7 @@ Stick to one instructor if possible. Changing schools often disrupts progress an
 
 ## Summing up
 
-![Swedish Driving License Checklist](/images/driving_license/sweden_driving_license_checklist.png)
+![Swedish Driving License Checklist](/images/driving_license/sweden_driving_license_checklist.webp)
 
 The two most important factors are **time** and **money**. Set aside the full budget so you don’t have to stop midway, and dedicate 3–5 months of focused effort. The rest is discipline, patience, and persistence.
 

@@ -2,7 +2,7 @@
 title: "We Found Nemo (and Dory!) at Northern Europe’s Largest Aquarium"
 date: "2025-08-22"
 tags: ["travel", "culture", "denmark", "scandinavia"]
-coverImage: "/images/blue_planet/16.jpg"
+coverImage: "/images/blue_planet/16.webp"
 ---
 To celebrate my daughter’s 7th birthday, we wanted to do something truly unforgettable — something that would open her eyes to the wonders of the world beneath the sea. Just a few metres from the Øresund strait in Copenhagen sits a place that does exactly that: Den Blå Planet, the National Aquarium of Denmark. This is Northern Europe’s largest, most state-of-the-art aquarium, and it offers not only an impressive collection of marine life, but also a full sensory journey into the mysteries of the ocean.
 
@@ -17,24 +17,24 @@ Once inside, guests step straight into the “vortex” — a curved lobby that 
 We had purchased our tickets online, which meant we could skip the ticket counter. However, Den Blå Planet controls visitor numbers carefully to ensure that each guest has the best possible experience. This meant we waited about half an hour at the entrance before being allowed inside. It was a small inconvenience, but once we stepped in, the wait was well worth it.
 
 <!--gallery-->
-![Alligator gar](/images/blue_planet/6.jpg)
-![The big Aquarium](/images/blue_planet/9.jpg)
-![Shark](/images/blue_planet/2.jpg)
-![Bioluminescent corais macios](/images/blue_planet/11.jpg)
-![Stingray](/images/blue_planet/7.jpg)
-![Xingu River ray](/images/blue_planet/10.jpg)
-![Nemo is looking at us!](/images/blue_planet/1.jpg)
-![Seahorse](/images/blue_planet/3.jpg)
-![The Golden Poison Frog](/images/blue_planet/5.jpg)
-![Tri-colored poison dart frog](/images/blue_planet/8.jpg)
-![Tri-colored poison dart frog](/images/blue_planet/12.jpg)
-![Sharks](/images/blue_planet/18.jpg)
-![Red-bellied piranha](/images/blue_planet/13.jpg)
-![Dory! Powder blue tang](/images/blue_planet/17.jpg)
-![Multiple Fishes](/images/blue_planet/19.jpg)
-![Stingray](/images/blue_planet/4.jpg)
-![Mata Mata Turtle](/images/blue_planet/20.jpg)
-![Chitala chitala](/images/blue_planet/15.jpg)
+![Alligator gar](/images/blue_planet/6.webp)
+![The big Aquarium](/images/blue_planet/9.webp)
+![Shark](/images/blue_planet/2.webp)
+![Bioluminescent corais macios](/images/blue_planet/11.webp)
+![Stingray](/images/blue_planet/7.webp)
+![Xingu River ray](/images/blue_planet/10.webp)
+![Nemo is looking at us!](/images/blue_planet/1.webp)
+![Seahorse](/images/blue_planet/3.webp)
+![The Golden Poison Frog](/images/blue_planet/5.webp)
+![Tri-colored poison dart frog](/images/blue_planet/8.webp)
+![Tri-colored poison dart frog](/images/blue_planet/12.webp)
+![Sharks](/images/blue_planet/18.webp)
+![Red-bellied piranha](/images/blue_planet/13.webp)
+![Dory! Powder blue tang](/images/blue_planet/17.webp)
+![Multiple Fishes](/images/blue_planet/19.webp)
+![Stingray](/images/blue_planet/4.webp)
+![Mata Mata Turtle](/images/blue_planet/20.webp)
+![Chitala chitala](/images/blue_planet/15.webp)
 <!--gallery-->
 
 ## Exploring the Aquarium – A Journey Through the Seas
