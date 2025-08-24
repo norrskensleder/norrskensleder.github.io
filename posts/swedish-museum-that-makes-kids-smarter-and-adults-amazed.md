@@ -2,7 +2,7 @@
 title: "The Swedish Museum That Makes Kids Smarter and Adults Amazed"
 date: "2025-08-16"
 tags: ["sweden", "stockholm", "travel", "culture"]
-coverImage: "/images/nhms/IMG_3971.JPG"
+coverImage: "/images/nhms/IMG_3971.webp"
 author: ""
 ---
 
@@ -22,18 +22,18 @@ The museum is full of different worlds:
 At one point, my daughter started *teaching me* about fossils and animals. That is the magic of this place – children don’t just watch, they explore and learn, and they do it with joy.
 
 <!--gallery-->
-![Dinosaurs Eggs](/images/nhms/IMG_3976.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3947.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3949.JPG)
-![Dinosaurs](/images/nhms/IMG_3974.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3975.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3981.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3985.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3986.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3987.JPG)
-![Dinosaurs fossils](/images/nhms/IMG_3989.JPG)
-![Mammoth fossils](/images/nhms/IMG_3999.JPG)
-![Pre-Historic Rhinoceroses fossils](/images/nhms/IMG_4005.JPG)
+![Dinosaurs Eggs](/images/nhms/IMG_3976.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3947.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3949.webp)
+![Dinosaurs](/images/nhms/IMG_3974.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3975.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3981.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3985.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3986.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3987.webp)
+![Dinosaurs fossils](/images/nhms/IMG_3989.webp)
+![Mammoth fossils](/images/nhms/IMG_3999.webp)
+![Pre-Historic Rhinoceroses fossils](/images/nhms/IMG_4005.webp)
 <!--gallery-->
 
 ## Don’t Miss These Highlights
@@ -47,15 +47,15 @@ Every part of the museum is special, but there are a few experiences that you sh
 * **Fossils and Gems** – Some sparkle, some look strange, but every stone tells a story millions of years old.
 
 <!--gallery-->
-![The Giant Puffball](/images/nhms/IMG_3923.JPG)
-![5kg Lobster](/images/nhms/IMG_3926.JPG)
-![The Giant Crab](/images/nhms/IMG_3929.JPG)
-![The Giant Sequoia](/images/nhms/IMG_3934.JPG)
-![My Daughter in front of The Giant Sequoia](/images/nhms/IMG_3933.JPG)
-![Iron meteorite](/images/nhms/IMG_3936.JPG)
-![Cross section of a Gigantic tree](/images/nhms/IMG_3952.JPG)
-![Human Evolution Tree](/images/nhms/IMG_3995.JPG)
-![Neanderthals](/images/nhms/IMG_4006.JPG)
+![The Giant Puffball](/images/nhms/IMG_3923.webp)
+![5kg Lobster](/images/nhms/IMG_3926.webp)
+![The Giant Crab](/images/nhms/IMG_3929.webp)
+![The Giant Sequoia](/images/nhms/IMG_3934.webp)
+![My Daughter in front of The Giant Sequoia](/images/nhms/IMG_3933.webp)
+![Iron meteorite](/images/nhms/IMG_3936.webp)
+![Cross section of a Gigantic tree](/images/nhms/IMG_3952.webp)
+![Human Evolution Tree](/images/nhms/IMG_3995.webp)
+![Neanderthals](/images/nhms/IMG_4006.webp)
 <!--gallery-->
 
 ## A Living Classroom
@@ -77,12 +77,12 @@ Here are some things I learned that will make your visit even better:
 * **Perfect for rainy days.** The museum is all indoors, so it’s a cozy adventure.
 
 <!--gallery-->
-![fossils](/images/nhms/IMG_3937.JPG)
-![fossils](/images/nhms/IMG_3939.JPG)
-![fossils](/images/nhms/IMG_3943.JPG)
-![fossils](/images/nhms/IMG_3979.JPG)
-![fossils](/images/nhms/IMG_3982.JPG)
-![Naturhistoriska Riksmuseet](/images/nhms/IMG_3909.JPG)
+![fossils](/images/nhms/IMG_3937.webp)
+![fossils](/images/nhms/IMG_3939.webp)
+![fossils](/images/nhms/IMG_3943.webp)
+![fossils](/images/nhms/IMG_3979.webp)
+![fossils](/images/nhms/IMG_3982.webp)
+![Naturhistoriska Riksmuseet](/images/nhms/IMG_3909.webp)
 <!--gallery-->
 
 ## As we finish
@@ -92,8 +92,8 @@ When I left the Naturhistoriska Riksmuseet, I felt like I had traveled through t
 If you are in Stockholm, **don’t miss it**. Whether you are with kids, friends, or even alone, you will come out with new knowledge, fun memories, and maybe even more questions about our amazing world.
 
 <!--gallery-->
-![Mammoth fossils](/images/nhms/IMG_4002.JPG)
-![Underwater Life](/images/nhms/IMG_4013.JPG)
-![fossils](/images/nhms/IMG_3983.JPG)
+![Mammoth fossils](/images/nhms/IMG_4002.webp)
+![Underwater Life](/images/nhms/IMG_4013.webp)
+![fossils](/images/nhms/IMG_3983.webp)
 
 <!--gallery-->
