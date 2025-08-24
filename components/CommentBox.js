@@ -37,26 +37,23 @@ export default function CommentBox({ slug }) {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
+    if (!db) {
+      setLoading(false);
+      setComments([]);
+      return;
+    }
     const q = query(collection(db, "comments", slug, "items"), orderBy("created", "asc"));
     const unsub = onSnapshot(q,
-
       (snap) => {
-          setComments(snap.docs.map(doc => ({ id: doc.id, ...({ id: doc.id, ...doc.data() }) })));
+        setComments(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
         setLoading(false);
         setError(null);
       },
       (err) => {
         console.error('Error loading comments:', err);
         setError('Failed to load comments. Please check your internet connection and try again.');
-          setLoading(false);
-        setError(null);
-      },
-      (err) => {
-        console.error('Error loading comments:', err);
-        setError('Failed to load comments. Please check your internet connection and try again.');
         setLoading(false);
-        }
-
+      }
     );
     return () => unsub();
   }, [slug]);
@@ -64,35 +61,21 @@ export default function CommentBox({ slug }) {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
-
+    if (!db) {
+      setError('Commenting is disabled in development mode.');
+      return;
+    }
     setSubmitting(true);
     setError(null);
     setSuccess(false);
-
-    try {
-
-    setSubmitting(true);
-    setError(null);
-    setSuccess(false);
-
     try {
       await addDoc(collection(db, "comments", slug, "items"), {
-          name: name.trim(),
-          text: text.trim(),
-          created: Date.now(),
-        });
-        setText("");
+        name: name.trim(),
+        text: text.trim(),
+        created: Date.now(),
+      });
+      setText("");
       setSuccess(true);
-      // Clear success message after 3 seconds
-      setTimeout(() => setSuccess(false), 3000);
-    } catch (err) {
-      console.error('Error posting comment:', err);
-      setError('Failed to post comment. Please check your internet connection and try again.');
-    } finally {
-      setSubmitting(false);
-    }
-      setSuccess(true);
-      // Clear success message after 3 seconds
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       console.error('Error posting comment:', err);

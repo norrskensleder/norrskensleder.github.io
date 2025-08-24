@@ -35,6 +35,12 @@ export default function LikeDislike({ slug }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!db) {
+      setLoading(false);
+      setCounts({ like: 0, dislike: 0 });
+      setError('Voting is disabled in development mode.');
+      return;
+    }
     async function fetchCounts() {
       try {
         const ref = doc(db, "likes", slug);
