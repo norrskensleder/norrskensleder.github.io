@@ -2,7 +2,7 @@
 title: "Under the Blue Hole: Our Journey to Catch the Northern Lights Beyond the Arctic Circle"
 date: "2025-08-15"
 tags: ["scandinavia", "sweden", "travel"]
-coverImage: "/images/winterabisko/IMG_4251.jpeg"
+coverImage: "/images/winterabisko/IMG_4251.webp"
 ---
 At the end of 2022, we had to renew our passports.
 From the quiet south of Sweden, we set our eyes on Stockholm, where the embassy waited. It would be a long, slow journey by train — six hours of rails stretching through frost and distance.
@@ -23,9 +23,9 @@ Abisko is a small village in the shadow of Sweden’s mining town, Kiruna, and t
 Abisko is more than a village. It is a place of study, where scientists from around the world gather to measure the breath of the Arctic. Since 1913, the Abisko Scientific Research Station has recorded the winds, the snow, the slow thawing of permafrost. It is also a place where the sky holds a secret: a microclimate, the *blue hole*, which grants clearer skies than most of the Arctic. And in those skies, when the clouds part, the Northern Lights appear.
 
 <!--gallery-->
-![Abisko Central Station](/images/winterabisko/IMG_4027.JPG)
-![aurora](/images/winterabisko/IMG_2141.jpeg)
-![Abisko](/images/winterabisko/IMG_4031.jpeg)
+![Abisko Central Station](/images/winterabisko/IMG_4027.webp)
+![aurora](/images/winterabisko/IMG_2141.webp)
+![Abisko](/images/winterabisko/IMG_4031.webp)
 <!--gallery-->
 
 Our hotel was a fifteen-minute walk from the station, along an icy road that shimmered under the dim light. We settled in, cooked simple meals from our grocery bags, played with our daughter in the snow, and wandered to the frozen lake to feel the silence.
@@ -33,23 +33,23 @@ Our hotel was a fifteen-minute walk from the station, along an icy road that shi
 On December 1st, we set out on the Nissunjåkka Suspension Bridge trail — 8.4 kilometers through birch forests and along the Abiskojokk River, the air so sharp it seemed to cut sound itself. There were moments when we were the only living souls in sight. Three and a half hours later, we returned to the hotel under a sky that refused to turn day. That night, we walked again toward the lake, hoping the heavens might open — but the clouds remained, and the sky kept its secret.
 
 <!--gallery-->
-![NSB trail](/images/winterabisko/IMG_4167.jpeg)
-![NSB trail](/images/winterabisko/IMG_4180.JPG)
-![NSB trail](/images/winterabisko/IMG_1881.jpeg)
-![NSB trail](/images/winterabisko/IMG_4206.jpeg)
-![slipped in icy river](/images/winterabisko/IMG_4155.jpeg)
-![mountains and lake](/images/winterabisko/IMG_4354.jpeg)
+![NSB trail](/images/winterabisko/IMG_4167.webp)
+![NSB trail](/images/winterabisko/IMG_4180.webp)
+![NSB trail](/images/winterabisko/IMG_1881.webp)
+![NSB trail](/images/winterabisko/IMG_4206.webp)
+![slipped in icy river](/images/winterabisko/IMG_4155.webp)
+![mountains and lake](/images/winterabisko/IMG_4354.webp)
 <!--gallery-->
 
 The next day, we traced another path: the Östra Loop Trail, 11.3 kilometers of snow, river, and canyon. Words cannot hold the beauty of Abisko in winter; it is not something seen but something breathed. Still, the sky stayed veiled, and we began to think ourselves unlucky.
 
 <!--gallery-->
-![OL trail](/images/winterabisko/IMG_4301.jpeg)
-![OL trail](/images/winterabisko/IMG_4292.jpeg)
-![OL trail](/images/winterabisko/IMG_4290.jpeg)
-![OL trail](/images/winterabisko/IMG_4280.jpeg)
-![OL trail](/images/winterabisko/IMG_4300.JPG)
-![OL trail](/images/winterabisko/IMG_2095.jpeg)
+![OL trail](/images/winterabisko/IMG_4301.webp)
+![OL trail](/images/winterabisko/IMG_4292.webp)
+![OL trail](/images/winterabisko/IMG_4290.webp)
+![OL trail](/images/winterabisko/IMG_4280.webp)
+![OL trail](/images/winterabisko/IMG_4300.webp)
+![OL trail](/images/winterabisko/IMG_2095.webp)
 <!--gallery-->
 
 It was my wife who suggested the chase.
@@ -66,8 +66,8 @@ It lasted perhaps twenty minutes, perhaps forever.
 We stood there, strangers bound together by awe, each of us quietly aware that we were inside a memory we would never lose. I had seen the aurora later, from the backyard of our home in southern Sweden, but never like this — in the deep of the Arctic night, with the whole sky breathing above us.
 
 <!--gallery-->
-![Abisko](/images/winterabisko/IMG_4029.jpeg)
-![aurora](/images/winterabisko/IMG_2120.jpeg)
+![Abisko](/images/winterabisko/IMG_4029.webp)
+![aurora](/images/winterabisko/IMG_2120.webp)
 <!--gallery-->
 
 The next morning, we began the long journey south. The light we had chased stayed with us, a flicker behind the eyes, as if some part of the north had followed us home.
