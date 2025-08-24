@@ -2,7 +2,7 @@
 title: "Scandinavian Trolls: From Myth to Modern Magic"
 date: "2023-05-15"
 tags: ["culture", "scandinavia", "mythology", "travel"]
-coverImage: "/images/trolls.jpg"
+coverImage: "/images/trolls/trolls.webp"
 ---
 
 Trolls are everywhere in Norway, from miniatures and sculptures in shops to street names and countless place names. Recently I have had a road trip on different parts of Norway and I got curious about these intriguing creatures. I delved into the world of trolls.
@@ -12,11 +12,11 @@ Trolls are a fundamental part of Norwegian culture, deeply embedded in art, lite
 In Norwegian lore, trolls are depicted as real beings living in mountains, forests, or caves. They are often large, connected to nature, and antagonistic towards humans and gods alike. Remarkably, trolls were even mentioned in Norwegian Christian laws, which forbade people from eating with them or waking them up at night.
 
 <!--gallery-->
-![William](/images/trolls_1.JPG)
-![Poppy](/images/trolls_2.JPG)
-![Bert](/images/trolls_3.JPG)
-![Branch](/images/trolls_4.JPG)
-![Poppy](/images/trolls_5.JPG)
+![William](/images/trolls/trolls_1.webp)
+![Poppy](/images/trolls/trolls_2.webp)
+![Bert](/images/trolls/trolls_3.webp)
+![Branch](/images/trolls/trolls_4.webp)
+![Poppy](/images/trolls/trolls_5.webp)
 <!--gallery-->
 
 In literature and folklore, trolls are usually portrayed as ugly, aggressive creatures with a love for mischief and trickery. They symbolize chaos and disruption and are often associated with the wild, untamed aspects of nature. These stories also spread to Sweden, Denmark, Finland, and Iceland, making trolls a common figure in Scandinavian folklore.
