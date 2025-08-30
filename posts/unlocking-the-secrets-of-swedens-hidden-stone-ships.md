@@ -31,19 +31,19 @@ This difference makes the mystery even deeper. It suggests that while the stone 
 
 ## Uncovering the Theories
 
-Even though no one knows for sure, there are many interesting ideas about what Ales Stenar was used for. These ideas show us how curious people have been for centuries.
+Even though no one knows for sure, there are many interesting ideas about what these stone ships were used for. These ideas show us how curious people have been for centuries.
 
 ### A Viking Burial Site
 
-One of the most popular theories is that Ales Stenar is a [**burial monument**](https://en.wikipedia.org/wiki/Norse_funeral). People from the [Viking Age](https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/) often buried important people in "stone ships," which were thought to help guide the dead on their final journey. This is a powerful idea, especially since archaeologists found a clay pot with burned human bones inside the monument. However, a full grave has never been found, so the mystery remains.
+One of the most popular theories is that these were [burial monument](https://en.wikipedia.org/wiki/Norse_funeral). People from the [Viking Age](https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/) often buried important people in "stone ships," which were thought to help guide the dead on their final journey. This is a powerful idea, especially since archaeologists have sometimes found graves with burned bones from the Late Iron Age inside similar monuments. However, a full grave has never been found at Ales Stenar, so the mystery remains.
 
 ### A Giant Sundial
 
-Another fascinating theory is that the stones are a [**solar calendar**](https://www.britannica.com/science/solar-calendar) or a giant sundial. The stones are placed in a way that the sun sets at the northwestern tip of the ship in the summer and rises at the opposite end in the winter. This alignment with the seasons suggests that the people who built it had deep knowledge of the sun and stars. Maybe it was a way for them to keep track of time and important events.
+Another fascinating theory is that the stones are a [solar calendar](https://www.britannica.com/science/solar-calendar) or a giant sundial. The stones at Ales Stenar are placed in a way that the sun sets at the northwestern tip of the ship in the summer and rises at the opposite end in the winter. This alignment with the seasons suggests that the people who built it had deep knowledge of the sun and stars. Maybe it was a way for them to keep track of time and important events.
 
 ### A Place for Ceremonies
 
-Some experts believe Ales Stenar was a **ceremonial site** or a place for special gatherings. Its amazing location with a view of the sea would have made it a perfect spot for rituals or important meetings. The stones could have marked a place of power, where people came together to celebrate or honor their leaders.
+Some experts believe these stone ships were ceremonial sites or places for special gatherings. Their amazing location would have made them perfect spots for rituals or important meetings. The stones could have marked a place of power, where people came together to celebrate or honor their leaders.
 
 <!--gallery-->
 ![](/images/ap/2.webp)
