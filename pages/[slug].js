@@ -187,7 +187,7 @@ export default function Post({ post }) {
             <Box sx={{ my: 3 }}>
               <iframe
                 width="100%"
-                height="550"
+                height="530"
                 src={post.youtube.replace('watch?v=', 'embed/')}
                 title={`YouTube video: ${post.title}`}
                 frameBorder="0"
@@ -332,7 +332,7 @@ function MarkdownWithGallery({ content }) {
       return (
         <iframe
           width="100%"
-          height="550"
+          height="513"
           src={`https://www.youtube.com/embed/${videoId}`}
           title="YouTube video"
           frameBorder="0"
