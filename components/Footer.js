@@ -154,17 +154,6 @@ export default function Footer() {
             </Typography>
           </Box>
 
-          {/* Cookie and Privacy Policy Links */}
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            <a
-              href="#"
-              onClick={() => window.googlefc?.callbackQueue?.push(window.googlefc?.showRevocationMessage)}
-              style={{ textDecoration: 'underline', color: '#005cbf' }}
-            >
-              Privacy & Cookie Settings
-            </a>
-          </Typography>
-
           {/* Additional Info */}
           <Typography
             variant="caption"
